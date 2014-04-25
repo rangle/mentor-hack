@@ -5,17 +5,15 @@
 
 angular.module('app', [
   'app.components.main-controller',
-  'ui.router'
+  'ngRoute'
 ])
-// Ui-Router Definitions
-.config(function($stateProvider, $urlRouterProvider) {
-
-  $stateProvider
-    .state('main', {
-      url: '/',
+.config(function($routeProvider) {
+  $routeProvider
+    .when('/', {
       templateUrl: 'sections/main/main.html',
       controller: 'MainCtrl'
+    })
+    .otherwise({
+      redirectTo:'/'
     });
-
-  $urlRouterProvider.otherwise('/');
 })
