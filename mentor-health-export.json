@@ -1,0 +1,58 @@
+{
+  "Teams" : [ null, {
+    "displayName" : "The Awesomes"
+  } ],
+  "Users" : [ {
+    "role" : "",
+    "isAdmin" : true,
+    "bio" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "photo" : "photo.jpg",
+    "name" : "Nick VanWeerdenburg",
+    "isMentor" : false,
+    "email" : "admin@event.com"
+  }, {
+    "role" : "Designer",
+    "isAdmin" : false,
+    "bio" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "skills" : [ "UI", "UX", "Illustration" ],
+    "photo" : "photo.jpg",
+    "bookings" : [ null, "team1" ],
+    "name" : "Mike Costanzo",
+    "isMentor" : true,
+    "email" : "mike@event.com"
+  }, {
+    "role" : "Developer",
+    "isAdmin" : false,
+    "bio" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "skills" : [ "Life", "Your mother", "Master-class coding abilities" ],
+    "photo" : "photo.jpg",
+    "bookings" : [ null, "team2", "team2", "team1" ],
+    "name" : "Rafael Khan",
+    "isMentor" : true,
+    "email" : "rafael@event.com"
+  }, {
+    "role" : "",
+    "isAdmin" : false,
+    "bio" : "",
+    "photo" : "photo.jpg",
+    "name" : "Abdella Ali",
+    "isMentor" : false,
+    "email" : "abdella@php.net"
+  }, {
+    "role" : "",
+    "isAdmin" : false,
+    "bio" : "",
+    "photo" : "photo.jpg",
+    "name" : "Bertrand Karerangabo",
+    "isMentor" : false,
+    "email" : "bertrand@aol.com"
+  }, {
+    "role" : "",
+    "isAdmin" : false,
+    "bio" : "",
+    "photo" : "photo.jpg",
+    "name" : "Gurjot Narwal",
+    "isMentor" : false,
+    "email" : "gurjot@gmail.com"
+  } ]
+}
