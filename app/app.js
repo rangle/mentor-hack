@@ -5,7 +5,8 @@
 
 angular.module('app', [
   'app.components.main-controller',
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ])
 .config(function($routeProvider) {
   $routeProvider
@@ -17,3 +18,4 @@ angular.module('app', [
       redirectTo:'/'
     });
 })
+
