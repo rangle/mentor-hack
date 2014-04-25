@@ -1,0 +1,23 @@
+{
+  "name": "myApp",
+  "version": "0.0.0",
+  "authors": [
+    "Someone at rangle.io"
+  ],
+  "license": "private",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "client/components-bower"
+  ],
+  "dependencies": {
+    "angularfire": "~0.7.1",
+    "firebase": "~1.0.11",
+    "angular": "~1.2.16",
+    "angular-ui-router": "~0.2.10",
+    "angular-mocks": "~1.2.16",
+    "lodash": "~2.4.1",
+    "jquery": "~2.1.0"
+  }
+}

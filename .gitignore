@@ -1,0 +1,4 @@
+.idea/
+node_modules/
+client/components-bower/
+client/app/css/*.css
