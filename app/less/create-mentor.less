@@ -1,0 +1,33 @@
+.no-margin-padding() {
+  margin: 0;
+  padding: 0;
+}
+
+.create-mentor-modal {
+  form {
+    .no-margin-padding;
+
+    select, input, .input-group { margin-bottom: 10px; }
+
+    ul {
+      list-style-type: none;
+      .no-margin-padding;
+
+      li {
+        .input-group-addon {
+          cursor: pointer;
+        }
+      }
+    }
+    
+    .add-container {
+      text-align: right;
+    }
+  }
+
+  .modal-header {
+    h3 {
+      .no-margin-padding;
+    }
+  }
+}
