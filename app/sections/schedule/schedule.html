@@ -1,0 +1,52 @@
+<h1>Scheduler</h1>
+
+<div class="row">
+	<!-- List of Teams	-->
+  <div class="col-xs-12 col-md-3">
+    <div
+    	  class="panel panel-default"
+    	  class="list-group-item"
+    	  ng-class="{true: 'team-handle', false: 'break-handle' }[['Lunch', 'Dinner'].indexOf(team) == -1]"
+      	ui-draggable="true" 
+      	drag="team" 
+      	ng-repeat="team in teams track by $index">
+      <div class="panel-body">
+        {{team}}
+      </div>
+  	</div>
+  </div>
+
+  <div class="col-xs-12 col-md-9">
+  <!-- Filters -->
+  	<div class="row padding-bottom">
+  		<div class="col-xs-9">
+		 		<select class="form-control">
+				  <option>All</option>
+				  <option>Designers</option>
+				  <option>Developers</option>
+				  <option>Health Professionals</option>
+				</select>
+			</div>
+			<div class="fcol-xs-3">
+				<button type="submit" class="btn btn-primary">Create Mentor</button>
+			</div>
+		</div>
+		<!-- Mentor -->
+		<div class="row">
+	  	<div class="time-slots">
+			  <div 
+			  	class="slot"
+	      	ng-repeat="team in bookings track by $index"
+	      	ui-on-Drop="onDrop($event, $index, $data)">
+	        	<div class="time">
+	        		{{time($index)}} 
+	        	</div><!--
+	        	 --><div class="team" 
+	        	 			ng-class="taken(team)">
+	        					{{team}}
+	        			</div>
+			  </div>
+			</div>
+		</div>
+  </div>
+</div>

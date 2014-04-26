@@ -1,3 +1,55 @@
 // Core variables and mixins
 @import "variables.less";
 @import "bootstrap/bootstrap.less";
+
+
+
+// Drag And Drop
+.team-handle {
+	color: #fff;
+  background-color: #F7AB97;
+}
+.break-handle {
+	color: #fff;
+	background-color: #8DBAF7;
+}
+.on-drag-enter{
+  background-color: #FCF8E3;
+}
+
+.padding-bottom {
+	margin-bottom: 20px !important;
+}
+
+.time-slots {
+	.list-group;
+
+	.slot {
+		.list-group-item;
+		line-height: 2.5;	
+		border-radius: 0px !important;
+		padding: 0;
+
+		.time { 
+			display: inline-block;
+			background-color: #F2F2F2; 
+			padding: 10px 15px;
+			width: 25%;
+			text-align: center;
+		}
+		.team {
+			width: 75%;
+			text-align: center;
+			display: inline-block;
+			padding: 10px 15px;
+			color: #fff;
+			font-weight: bolder;
+			&.taken {
+				background-color: #F7AB97;
+			}
+			&.break {
+				background-color: #8DBAF7;
+			}
+		}
+	}
+}
