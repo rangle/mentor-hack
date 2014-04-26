@@ -16,5 +16,6 @@ mapper.filter = function (result, req) {
 // exports.routes.push(['get', 'auth/user/:username', mapper.get('users')]);
 
 exports.routes = [
-  ['get', 'users', mapper.get('users')]
+  ['get', 'users', mapper.get('users')],
+  ['get', 'teams', mapper.get('teams')]
 ];
