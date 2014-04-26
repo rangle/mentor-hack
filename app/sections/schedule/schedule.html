@@ -6,12 +6,12 @@
     <div
     	  class="panel panel-default"
     	  class="list-group-item"
-    	  ng-class="{true: 'team-handle', false: 'break-handle' }[['Lunch', 'Dinner'].indexOf(team) == -1]"
+    	  ng-class="{true: 'team-handle', false: 'break-handle' }[['Lunch', 'Dinner'].indexOf(team.displayName) == -1]"
       	ui-draggable="true" 
       	drag="team" 
       	ng-repeat="team in teams track by $index">
       <div class="panel-body">
-        {{team}}
+        {{team.displayName}}
       </div>
   	</div>
   </div>
@@ -36,14 +36,14 @@
 	  	<div class="time-slots">
 			  <div 
 			  	class="slot"
-	      	ng-repeat="team in bookings track by $index"
+	      	ng-repeat="slot in bookings track by $index"
 	      	ui-on-Drop="onDrop($event, $index, $data)">
 	        	<div class="time">
 	        		{{time($index)}} 
 	        	</div><!--
 	        	 --><div class="team" 
-	        	 			ng-class="taken(team)">
-	        					{{team}}
+	        	 			ng-class="taken(slot)">
+	        					{{slot}}
 	        			</div>
 			  </div>
 			</div>

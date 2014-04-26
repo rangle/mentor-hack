@@ -1,15 +1,18 @@
 'use strict';
 
 angular.module('app')
-  .controller('ScheduleCtrl', function($scope) {
-    $scope.teams = [
-      'John',
-      'Jack',
-      'Mark',
-      'Ernie',
-      'Lunch',
-      'Dinner'
-    ];
+  .controller('ScheduleCtrl', function($scope, server) {
+//    $scope.teams = [
+//      'John',
+//      'Jack',
+//      'Mark',
+//      'Ernie',
+//      'Lunch',
+//      'Dinner'
+//    ];
+
+    $scope.mentors = server.users;
+    $scope.teams = server.teams;
 
     $scope.bookings = ['','','','','','','','',''];
 
@@ -32,11 +35,11 @@ angular.module('app')
 
     $scope.onDrop = function($event, index, $data) {
       if($scope.bookings[index] === '')
-        $scope.bookings[index] = $data;
+        $scope.bookings[index] = $data.displayName;
       else {
         var r = confirm('This is slot is already taken, do you want to overwrite it?');
         if (r)
-          $scope.bookings[index] = $data;
+          $scope.bookings[index] = $data.displayName;
       }
     };
 
