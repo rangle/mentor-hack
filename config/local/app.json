@@ -16,7 +16,7 @@
     {
       "route" : "/bower",
       "type": "static",
-      "path" : "app/bower_components"
+      "path" : "app/bower-components"
     },
     {
       "route" : "/api",
