@@ -7,13 +7,18 @@ angular.module('app', [
   'app.components.main-controller',
   'ngRoute',
   'ui.bootstrap',
-  'app.server'
+  'app.server',
+  'ngDragDrop'
 ])
 .config(function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'app/sections/main/main.html',
       controller: 'MainCtrl'
+    })
+    .when('/schedule',  {
+      templateUrl: 'app/sections/schedule/schedule.html',
+      controller: 'ScheduleCtrl'
     })
     .otherwise({
       redirectTo:'/'

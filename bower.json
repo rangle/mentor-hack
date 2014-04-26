@@ -19,6 +19,7 @@
     "jquery": "~2.1.0",
     "angular-route": "~1.2.16",
     "angular-bootstrap": "~0.10.0",
-    "koast": "~0.1.6"
+    "koast": "~0.1.6",
+    "angular-dragdrop-ganarajpr": "~1.0.1"
   }
 }

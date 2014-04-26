@@ -4599,9 +4599,8 @@ a.thumbnail.active {
   position: relative;
   display: block;
   padding: 10px 15px;
-  margin-bottom: -1px;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
 }
 .list-group-item:first-child {
   border-top-right-radius: 4px;
@@ -5771,4 +5770,68 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+.team-handle {
+  color: #fff;
+  background-color: #F7AB97;
+}
+.break-handle {
+  color: #fff;
+  background-color: #8DBAF7;
+}
+.on-drag-enter {
+  background-color: #FCF8E3;
+}
+.padding-bottom {
+  margin-bottom: 20px !important;
+}
+.time-slots {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+.time-slots .slot {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  border-top: 1px solid #dddddd;
+  line-height: 2.5;
+  border-radius: 0px !important;
+  padding: 0;
+}
+.time-slots .slot:first-child {
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.time-slots .slot:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.time-slots .slot > .badge {
+  float: right;
+}
+.time-slots .slot > .badge + .badge {
+  margin-right: 5px;
+}
+.time-slots .slot .time {
+  display: inline-block;
+  background-color: #F2F2F2;
+  padding: 10px 15px;
+  width: 25%;
+  text-align: center;
+}
+.time-slots .slot .team {
+  width: 75%;
+  text-align: center;
+  display: inline-block;
+  padding: 10px 15px;
+  color: #fff;
+  font-weight: bolder;
+}
+.time-slots .slot .team.taken {
+  background-color: #F7AB97;
+}
+.time-slots .slot .team.break {
+  background-color: #8DBAF7;
 }

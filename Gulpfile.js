@@ -98,7 +98,7 @@ gulp.task('develop', function() {
     './app/less/**/*.less',
     './app/less/*.less'
   ], function() {
-    gulp.run('sass');
+    gulp.run('less');
   });
 
   console.log('[CONNECT] Listening on port 3000');
