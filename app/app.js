@@ -9,7 +9,8 @@ angular.module('app', [
   'ngRoute',
   'ui.bootstrap',
   'app.server',
-  'ngDragDrop'
+  'ngDragDrop',
+  'angularFileUpload'
 ])
 .config(function($routeProvider) {
   $routeProvider

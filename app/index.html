@@ -1,7 +1,12 @@
 <html ng-app="app">
 <head>
-    <script src="bower/jquery/dist/jquery.min.js"></script>
-    <script src="bower/angular/angular.min.js"></script>
+    <script src="bower-components/jquery/dist/jquery.min.js"></script>
+
+    <script src="bower-components/ng-file-upload-shim/angular-file-upload-shim.min.js"></script>
+
+    <script src="bower-components/angular/angular.min.js"></script>
+
+    <script src="bower-components/ng-file-upload/angular-file-upload.min.js"></script> 
 
     <link rel="stylesheet" type="text/css" href="less/app.css"/>
     <link rel="stylesheet" type="text/css" href="bower-components/font-awesome/css/font-awesome.min.css"/>
@@ -14,22 +19,23 @@
     </div><!--/.container-->
     
     <!-- Dependencies -->
-    <script src="bower/lodash/dist/lodash.min.js"></script>
-    <script src="bower/koast/client/src/user.js"></script>
-    <script src="bower/koast/client/src/resource.js"></script>
-    <script src="bower/koast/client/src/koast.js"></script>
-    <script src="bower/angular-route/angular-route.js"></script>
-    <script src="bower/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script src="bower/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script src="bower/angular-dragdrop-ganarajpr/draganddrop.js"></script>
+    <script src="bower-components/lodash/dist/lodash.min.js"></script>
+    <script src="bower-components/koast/client/src/user.js"></script>
+    <script src="bower-components/koast/client/src/resource.js"></script>
+    <script src="bower-components/koast/client/src/koast.js"></script>
+    <script src="bower-components/angular-route/angular-route.js"></script>
+    <script src="bower-components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower-components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower-components/angular-dragdrop-ganarajpr/draganddrop.js"></script>
 
-    <script src="core/server/server.js"></script>    
+    <script src="/app/core/server/server.js"></script>
 
     <!-- App -->
     <script src="app.js"></script>
     <script src="components/main-controller/main-controller.js"></script>
     <script src="sections/schedule/schedule-controller.js"></script>
     <script src="components/create-mentor/create-mentor-controller.js"></script>
+
     <!-- Directives -->
     <script src="components/mentorDirective/mentorProfile.js"></script>
 
