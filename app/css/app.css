@@ -5939,3 +5939,6 @@ div {
 #RightPanel {
   width: 100%;
 }
+.xyz {
+  display: block;
+}
