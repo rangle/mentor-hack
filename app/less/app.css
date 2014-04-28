@@ -5771,6 +5771,9 @@ button.close {
     display: none !important;
   }
 }
+div {
+  overflow: auto;
+}
 .team-handle {
   color: #fff;
   background-color: #F7AB97;
@@ -5818,7 +5821,7 @@ button.close {
   display: inline-block;
   background-color: #F2F2F2;
   padding: 10px 15px;
-  width: 100%;
+  width: 25%;
   text-align: center;
 }
 .time-slots .slot .team {
@@ -5838,6 +5841,10 @@ button.close {
 .container {
   padding-left: 250px;
   transition: all 0.4s ease 0s;
+  margin-left: 0;
+}
+.altMentorBackground {
+  background-color: #09a6f1;
 }
 #LeftPanel {
   margin-left: -250px;

@@ -1,6 +1,6 @@
 <div id="LeftPanel">
   <!-- List of Teams	-->
-  <div class="col-xs-12 col-md-3">
+  <div class="col-xs-12 col-md-12">
     <div
       class="panel panel-default"
       class="list-group-item"
@@ -17,7 +17,7 @@
 
 <div id="RightPanel">
 
-  <div class="row padding-bottom">
+  <div id="FilterMenu" class="padding-bottom">
     <div class="col-xs-9">
       <select class="form-control">
         <option>All</option>
@@ -31,28 +31,26 @@
     </div>
   </div>
 
-  <div>
 
-    <div ng-repeat="mentor in mentors" mentor-profile="">
-      <div class="col-xs-12 col-md-9">
-        <!-- Filters -->
+  <div ng-repeat="mentor in mentors" mentor-profile="" ng-class-odd="'altMentorBackground'">
+    <div class="col-xs-12 col-md-9">
+      <!-- Filters -->
 
-        <!-- Mentor -->
-        <div class="row">
-          <div class="time-slots">
-            <div
-              class="slot"
-              ng-repeat="slot in bookings track by $index"
-              ui-on-Drop="onDrop($event, $index, $data)">
-              <div class="time">
-                {{time($index)}}
-              </div>
-              <!--
-                           -->
-              <div class="team"
-                   ng-class="taken(slot)">
-                {{slot}}
-              </div>
+      <!-- Mentor -->
+      <div class="row">
+        <div class="time-slots">
+          <div
+            class="slot"
+            ng-repeat="slot in bookings track by $index"
+            ui-on-Drop="onDrop($event, $index, $data)">
+            <div class="time">
+              {{time($index)}}
+            </div>
+            <!--
+                         -->
+            <div class="team"
+                 ng-class="taken(slot)">
+              {{slot}}
             </div>
           </div>
         </div>
