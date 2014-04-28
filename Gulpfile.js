@@ -13,7 +13,7 @@ var watch = require('gulp-watch');
 // var server = lr();
 
 var paths = {
-  clientScripts: ['client/app/**/*.js', 'client/app/*.js'],
+  clientScripts: ['client/app/**/*.js', 'client/app/*.js', 'client/app.js'],
   serverScripts: ['server/app.js', 'server/lib/**/*.js']
 };
 
@@ -25,12 +25,18 @@ options.beautify = JSON.parse(fs.readFileSync('.jsbeautifyrc'));
 
 var testFiles = [
   // 3rd party code
-  'client/components-bower/angular/angular.js',
-  'client/components-bower/angular-mocks/angular-mocks.js',
-  'client/components-bower/koast/client/src/**/*.js',
+  'client/bower-components/angular/angular.js',
+  'client/bower-components/angular-mocks/angular-mocks.js',
+  'client/bower-components/angular-route/angular-route.js',
+  'client/bower-components/angular-ui-router/angular-route.js',
+  'client/bower-components/angular-bootstrap/ui-bootstrap.min.js',
+  'client/bower-components/koast/client/src/**/*.js',
+  'client/bower-components/angular-dragdrop-ganarajpr/draganddrop.js',
 
   // app code
-  'client/app/**/*.js',
+  'client/app.js',
+  'client/components/**/*.js',
+  'client/core/**/*.js',
 
   // test code
   'client/tests/unit/**.js',
