@@ -15,11 +15,11 @@ angular.module('app', [
 .config(function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'app/sections/main/main.html',
+      templateUrl: 'sections/main/main.html',
       controller: 'MainCtrl'
     })
     .when('/schedule',  {
-      templateUrl: 'app/sections/schedule/schedule.html',
+      templateUrl: 'sections/schedule/schedule.html',
       controller: 'ScheduleCtrl'
     })
     .otherwise({
