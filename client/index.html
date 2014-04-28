@@ -1,0 +1,38 @@
+<html ng-app="app">
+<head>
+  <script src="/client/bower-components/jquery/dist/jquery.min.js"></script>
+  <script src="/client/bower-components/ng-file-upload-shim/angular-file-upload-shim.min.js"></script>
+  <script src="/client/bower-components/angular/angular.min.js"></script>
+  <script src="/client/bower-components/ng-file-upload/angular-file-upload.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="less/app.css"/>
+</head>
+
+<body>
+
+    <div class="container" ng-view>
+
+    </div><!--/.container-->
+    
+    <!-- Dependencies -->
+    <script src="/client/bower-components/lodash/dist/lodash.min.js"></script>
+    <script src="/client/bower-components/koast/client/src/user.js"></script>
+    <script src="/client/bower-components/koast/client/src/resource.js"></script>
+    <script src="/client/bower-components/koast/client/src/koast.js"></script>
+    <script src="/client/bower-components/angular-route/angular-route.js"></script>
+    <script src="/client/bower-components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="/client/bower-components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/client/bower-components/angular-dragdrop-ganarajpr/draganddrop.js"></script>
+
+    <script src="/client/core/server/server.js"></script>
+
+    <!-- App -->
+    <script src="/client/app.js"></script>
+    <script src="/client/components/main-controller/main-controller.js"></script>
+    <script src="/client/sections/schedule/schedule-controller.js"></script>
+    <script src="/app/components/create-mentor/create-mentor-controller.js"></script>
+
+    <!-- Directives -->
+    <script src="/client/components/mentorDirective/mentorProfile.js"></script>
+</body>
+</html>

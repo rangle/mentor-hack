@@ -4,19 +4,19 @@
     "cookieSecret" : "c3r3brum hom1nis"
   },
   "lessPaths": [
-    ["/app", "app"]
+    ["/client", "client"]
   ],
-  "indexHtml" : "app/index.html",
+  "indexHtml" : "client/index.html",
   "routes" : [
     {
-      "route" : "/app",
+      "route" : "/client",
       "type": "static",
-      "path" : "app"    
+      "path" : "client"    
     },
     {
       "route" : "/bower",
       "type": "static",
-      "path" : "app/bower-components"
+      "path" : "client/bower-components"
     },
     {
       "route" : "/api",

@@ -1,0 +1,37 @@
+/* global angular */
+
+// The main app module should be very small and should probably be limited to
+// declaring the dependencies and maybe having a run block.
+
+angular.module('app', [
+  'app.components.main-controller',
+  'app.components.directives',
+  'ngRoute',
+  'ui.bootstrap',
+  'app.server',
+  'ngDragDrop',
+  'angularFileUpload'
+])
+.config(function($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'client/sections/main/main.html',
+      controller: 'MainCtrl'
+    })
+    .when('/schedule',  {
+      templateUrl: 'client/sections/schedule/schedule.html',
+      controller: 'ScheduleCtrl'
+    })
+    .otherwise({
+      redirectTo:'/'
+    });
+})
+.run(['server', '$log', function(server, $log) {
+  server.whenReady()
+    .then(function() {
+      console.log('*Users:', server.users);
+      console.log('*Teams:', server.teams);
+    })
+    .then(null, $log.error);
+}]);
+
