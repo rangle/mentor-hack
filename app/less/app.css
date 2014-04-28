@@ -5841,10 +5841,16 @@ div {
 .container {
   padding-left: 250px;
   transition: all 0.4s ease 0s;
-  margin-left: 0;
+  margin: 0;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 100%;
+    padding-right: 0;
+  }
 }
 .altMentorBackground {
-  background-color: #09a6f1;
+  background-color: #c1f18c;
 }
 #LeftPanel {
   margin-left: -250px;

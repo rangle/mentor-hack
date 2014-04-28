@@ -17,6 +17,7 @@
 
 <div id="RightPanel">
 
+  <!-- Filter -->
   <div id="FilterMenu" class="padding-bottom">
     <div class="col-xs-9">
       <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control">
@@ -29,13 +30,10 @@
     </div>
   </div>
 
+  <!-- Mentor -->
+  <div ng-repeat="mentor in mentors | filter:predicate.type" mentor-profile="mentor" ng-class-odd="'altMentorBackground'">
+    <div class="col-xs-12 col-md-12">
 
-  <div ng-repeat="mentor in mentors | filter:predicate.type" mentor-profile="" ng-class-odd="'altMentorBackground'">
-    <div class="col-xs-12 col-md-9">
-      <!-- Filters -->
-
-      <!-- Mentor -->
-      <div class="row">
         <div class="time-slots">
           <div
             class="slot"
@@ -52,7 +50,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>

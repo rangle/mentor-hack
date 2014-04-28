@@ -10,9 +10,12 @@ angular.module('app.components.directives', [])
     return{
       restrict: 'A',
       templateUrl: 'app/components/mentorDirective/mentorProfile.html',
+      scope: {
+        'mentorProfile': '='
+      },
       transclude: true,
       link: function(scope, element, attrs){
-
+        scope.mentor = scope.mentorProfile;
       }
     }
   });
