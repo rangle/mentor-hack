@@ -31,25 +31,8 @@
   </div>
 
   <!-- Mentor -->
-  <div ng-repeat="mentor in mentors | filter:predicate.type" mentor-profile="mentor" ng-class-odd="'altMentorBackground'">
-    <div class="col-xs-12 col-md-12">
+  <div ng-repeat="mentor in mentors | filter:predicate.type" teams="teams"
+       mentor-profile="mentor" ng-class-odd="'altMentorBackground'">
 
-        <div class="time-slots">
-          <div
-            class="slot"
-            ng-repeat="slot in bookings track by $index"
-            ui-on-Drop="onDrop($event, $index, $data)">
-            <div class="time">
-              {{time($index)}}
-            </div>
-            <!--
-                         -->
-            <div class="team"
-                 ng-class="taken(slot)">
-              {{slot}}
-            </div>
-          </div>
-        </div>
-    </div>
   </div>
 </div>
