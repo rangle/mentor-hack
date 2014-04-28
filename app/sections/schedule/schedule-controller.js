@@ -2,17 +2,16 @@
 
 angular.module('app')
   .controller('ScheduleCtrl', function($scope, server) {
-//    $scope.teams = [
-//      'John',
-//      'Jack',
-//      'Mark',
-//      'Ernie',
-//      'Lunch',
-//      'Dinner'
-//    ];
 
     $scope.mentors = server.users;
     $scope.teams = server.teams;
+    $scope.predicate = '';
+
+    $scope.mentorFilter = [
+      {type: 'developer', label: 'Developer'},
+      {type: 'clinitian', label: 'Clinical Expert'},
+      {type: 'designer', label: 'Designer'}
+    ];
 
     $scope.bookings = ['','','','','','','','',''];
 

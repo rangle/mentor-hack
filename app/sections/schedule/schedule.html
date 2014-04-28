@@ -19,11 +19,9 @@
 
   <div id="FilterMenu" class="padding-bottom">
     <div class="col-xs-9">
-      <select class="form-control">
-        <option>All</option>
-        <option>Designers</option>
-        <option>Developers</option>
-        <option>Health Professionals</option>
+      <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control">
+        <option value="">All</option>
+
       </select>
     </div>
     <div class="fcol-xs-3">
@@ -32,7 +30,7 @@
   </div>
 
 
-  <div ng-repeat="mentor in mentors" mentor-profile="" ng-class-odd="'altMentorBackground'">
+  <div ng-repeat="mentor in mentors | filter:predicate.type" mentor-profile="" ng-class-odd="'altMentorBackground'">
     <div class="col-xs-12 col-md-9">
       <!-- Filters -->
 
