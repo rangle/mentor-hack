@@ -5771,9 +5771,8 @@ button.close {
     display: none !important;
   }
 }
-html,
-body {
-  height: 100%;
+div {
+  overflow: auto;
 }
 .team-handle {
   color: #fff;
@@ -5839,8 +5838,32 @@ body {
 .time-slots .slot .team.break {
   background-color: #8DBAF7;
 }
+.container {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+  margin: 0;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+.altMentorBackground {
+  background-color: #c1f18c;
+}
 #LeftPanel {
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background: #f5f5f5;
+  position: fixed;
   height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
   background-color: lightgray;
-  width: 200px;
+}
+#RightPanel {
+  width: 100%;
 }

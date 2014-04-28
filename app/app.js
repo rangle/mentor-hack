@@ -5,6 +5,7 @@
 
 angular.module('app', [
   'app.components.main-controller',
+  'app.components.directives',
   'ngRoute',
   'ui.bootstrap',
   'app.server',
