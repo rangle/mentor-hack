@@ -9,16 +9,17 @@ angular.module('app', [
   'ngRoute',
   'ui.bootstrap',
   'app.server',
-  'ngDragDrop'
+  'ngDragDrop',
+  'angularFileUpload'
 ])
 .config(function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'app/sections/main/main.html',
+      templateUrl: '/app/sections/main/main.html',
       controller: 'MainCtrl'
     })
     .when('/schedule',  {
-      templateUrl: 'app/sections/schedule/schedule.html',
+      templateUrl: '/app/sections/schedule/schedule.html',
       controller: 'ScheduleCtrl'
     })
     .otherwise({

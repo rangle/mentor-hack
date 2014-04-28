@@ -1,0 +1,63 @@
+<div class="create-mentor-modal">
+
+  <form>
+    <div class="modal-header">
+      <h3>Create a new mentor</h3>
+    </div>
+
+    <div class="modal-body">
+      <ul>
+        <li ng-repeat="item in items">
+          <a ng-click="selected.item = item">{{ item }}</a>
+        </li>
+      </ul>
+
+      <div class="upload-container">
+        <div id="upload-button">
+          <span class="fa fa-upload"></span>
+          <input ng-file-select="onFileSelect($files)"
+                 type="file" name="file" class="file" />
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Name" />
+          <textarea class="form-control" placeholder="Bio" />
+        </div>
+
+        <div class="col-md-6">
+          <select class="form-control">
+            <option ng-repeat="type in mentorTypes">{{ type }}</option>
+          </select>
+
+          <ul>
+            <li ng-repeat="skill in mentor.skills track by $index">
+              <div class="input-group">
+                <input type="text" class="form-control" ng-model="mentor.skills[$index]" placeholder="Add a skill" />
+
+                <span class="input-group-addon" ng-click="modifySkillSet($index, mentor.skills.length)">
+                  <span ng-if="isLastItem($index, mentor.skills.length)"
+                        class="fa fa-plus"></span>
+
+                  <span ng-if="!isLastItem($index, mentor.skills.length)"
+                        class="fa fa-minus"></span>
+                </span>
+
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-primary" type="submit" ng-click="saveMentor()">OK</button>
+      <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+    </div>
+  </form>
+
+</div>
