@@ -3,13 +3,13 @@
  */
 
 
-angular.module('App')
+angular.module('app.components.directives', [])
 
 .directive('mentorProfile', function(){
 
     return{
       restrict: 'A',
-      templateUrl: 'mentorProfile.html',
+      templateUrl: 'app/components/mentorDirective/mentorProfile.html',
       transclude: true,
       link: function(scope, element, attrs){
 
