@@ -5,7 +5,7 @@
 
 angular.module('app.components.directives', [])
 
-.directive('mentorProfile', function(){
+.directive('mentorProfile', function(server){
 
     return{
       restrict: 'A',
@@ -17,6 +17,14 @@ angular.module('app.components.directives', [])
       link: function(scope, element, attrs){
 
         scope.bookings = ['','','','','','','','',''];
+
+        //Iterates over each booking currently on the mentor, and if not null (null means this spot is empty)
+        //apply the booking to the overall scope.bookings, which is bound to the view
+        scope.mentor.bookings.forEach(function(bookingSlot, idx){
+          if(bookingSlot){
+            scope.bookings[idx] = bookingSlot;
+          }
+        });
 
         scope.time = function (slot) {
           var time = 9 + 1 * slot+1;
@@ -33,8 +41,10 @@ angular.module('app.components.directives', [])
         // on-drop-success="dropSuccessHandler($event,$index,bookings)"
         scope.dropSuccessHandler = function($event, index, array) {
           // array.splice(index, 1);
+//          server.users.push()
         };
 
+        console.log(server);
         scope.onDrop = function($event, index, $data) {
           if(scope.bookings[index] === '')
             scope.bookings[index] = $data.displayName;
