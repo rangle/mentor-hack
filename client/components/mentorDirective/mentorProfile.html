@@ -1,11 +1,21 @@
 <div class="mentor">
   <div class="profile col-md-8">
 
-    <h1>{{mentor.name}}</h1>
+      <div class="">
+        <div class="thumbnail">
+          <img ng-src="{{mentor.profileImgUrl}}" alt="Profile Image" class="img-circle" style="width: 140px; height: 140px;"/>
+          <div class="caption">
+            <h3>{{mentor.name}}</h3>
+            <p>{{mentor.bio}}</p>
+            <h1 ng-show="mentor.skills.length > 0">Speciality Skillset</h1>
+            <ol>
+              <li ng-repeat="skill in mentor.skills">{{skill}}</li>
+            </ol>
+            <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+          </div>
+        </div>
+      </div>
 
-    <h1>{{mentor.role}}</h1>
-
-    <h1>{{mentor.email}}</h1>
 
   </div>
   <div class="schedule col-md-4">
