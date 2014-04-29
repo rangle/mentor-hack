@@ -29,7 +29,7 @@ angular.module('app.server', [
 .run(['koast',
   function(koast) {
     koast.setApiUriPrefix('/api/');
-    koast.addEndpoint('users');
-    koast.addEndpoint('teams');
+    koast.addEndpoint('users', ':_id');
+    koast.addEndpoint('teams', ':_id');
   }
 ]);
