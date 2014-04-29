@@ -34,7 +34,6 @@ exports.schemas = [{
 }, {
   name: 'users',
   properties: {
-    userId: Number,
     name: String,
     isMentor: Boolean,
     isAdmin: Boolean,
@@ -55,7 +54,6 @@ exports.schemas = [{
 }, {
   name: 'teams',
   properties: {
-    teamId: String,
     displayName: String
   }
 }];
