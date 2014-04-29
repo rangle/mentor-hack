@@ -12,7 +12,7 @@ angular.module('app.components.main-controller', [])
 
     $scope.showCreateMentorModal = function() {
       $modal.open({
-        templateUrl : '/app/components/create-mentor/create-mentor-modal.html',
+        templateUrl : '/client/components/create-mentor/create-mentor-modal.html',
         controller  : 'CreateMentorCtrl'
       });
     };
