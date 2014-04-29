@@ -1,24 +1,28 @@
 <div class="mentor">
-  <div class="profile col-md-8">
+  <div class="col-md-7">
 
-      <div class="">
+      <section class="profile">
         <div class="thumbnail">
           <img ng-src="{{mentor.profileImgUrl}}" alt="Profile Image" class="img-circle" style="width: 140px; height: 140px;"/>
           <div class="caption">
             <h3>{{mentor.name}}</h3>
             <p>{{mentor.bio}}</p>
-            <h1 ng-show="mentor.skills.length > 0">Speciality Skillset</h1>
+          </div>
+          <div class="skillset">  
+            <div class="mentor-icon"><img src="client/img/clinician.svg"></div>
+            <h4 ng-show="mentor.skills.length > 0">Speciality Skillset</h4>
             <ol>
               <li ng-repeat="skill in mentor.skills">{{skill}}</li>
             </ol>
-            <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
           </div>
+          <div class="edit">
+          <a href="#" class="btn btn-primary" role="button">Edit</a>
         </div>
-      </div>
+      </section>
 
 
   </div>
-  <div class="schedule col-md-4">
+  <div class="schedule col-md-5">
     <div class="col-xs-12 col-md-12">
 
       <div class="time-slots">
