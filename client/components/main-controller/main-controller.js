@@ -10,11 +10,6 @@ angular.module('app.components.main-controller', [])
 .controller('MainCtrl', ['$scope', '$modal',
   function ($scope, $modal) {
 
-    $scope.showCreateMentorModal = function() {
-      $modal.open({
-        templateUrl : '/client/components/create-mentor/create-mentor-modal.html',
-        controller  : 'CreateMentorCtrl'
-      });
-    };
+
   }
 ]);

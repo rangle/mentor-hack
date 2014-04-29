@@ -1,17 +1,34 @@
 angular.module('app')
 
-.controller('CreateMentorCtrl', ['$scope', '$modalInstance',
+.directive('createMentor', ['$modal',
+  function($modal) {
 
-  function($scope, $modalInstance) {
+    return{
+      restrict: 'A',
+      link: function(scope, element, attrs){
+
+        var showCreateMentorModal = function() {
+          $modal.open({
+            templateUrl : '/client/components/create-mentor-directive/create-mentor-modal.html',
+            controller  : 'CreateMentorCtrl'
+          });
+        };
+
+        element.on('click', showCreateMentorModal);
+
+      }
+    }
+
+  }])
+
+.controller('CreateMentorCtrl', function($scope, $modalInstance){
 
     $scope.mentorTypes = ['Designer', 'Developer', 'Doctor-Person'];
-
     $scope.mentor = {
       skills : ['']
     };
-    
+
     $scope.saveMentor = function() {
-    
     };
 
     $scope.cancel = function() {
@@ -38,7 +55,7 @@ angular.module('app')
     $scope.onFileSelect = function($files) {
       var file = $files[0];
       var fr = new FileReader();
-      
+
       fr.onload = function() {
         var img = new Image();
         img.onload = function() {
@@ -51,5 +68,4 @@ angular.module('app')
 
       fr.readAsDataURL(file);
     };
-
-  }]);
+  });
