@@ -26,6 +26,9 @@ angular.module('app.components.directives', [])
           }
         });
 
+        scope.editMentor = function(){
+        };
+
         scope.time = function (slot) {
           var time = 9 + 1 * slot + 1;
           time = time > 12 ? time + ' pm' : time + ' am';
