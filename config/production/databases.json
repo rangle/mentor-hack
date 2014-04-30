@@ -4,7 +4,7 @@
     "port": "33067",
     "db": "mentor-hack",
     "schemas": "./server/schemas.js",
-    "user": "abdella",
+    "user": "everyone",
     "pass": "m3anstack"
   }
 ]
