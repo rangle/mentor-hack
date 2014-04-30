@@ -5,6 +5,6 @@
     "db": "mentor-hack",
     "schemas": "./server/schemas.js",
     "username": "abdella@rangle.io",
-    "password": "m3anstack"
+    "pass": "m3anstack"
   }
 ]
