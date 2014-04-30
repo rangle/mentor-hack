@@ -37,10 +37,11 @@
     "gulp-watch": "^0.5.4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "postinstall": "bower install"
+
   },
   "author": "rangle.io",
-  "license": "commercial",
-  "postinstall": "./node_modules/bower/bin/bower install"
+  "license": "commercial"
 }
 
