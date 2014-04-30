@@ -1,0 +1,27 @@
+{
+  "portNumber": 3000,
+  "authentication": {
+    "cookieSecret" : "c3r3brum hom1nis"
+  },
+  "lessPaths": [
+    ["/client", "client"]
+  ],
+  "indexHtml" : "client/index.html",
+  "routes" : [
+    {
+      "route" : "/client",
+      "type": "static",
+      "path" : "client"    
+    },
+    {
+      "route" : "/bower",
+      "type": "static",
+      "path" : "client/bower-components"
+    },
+    {
+      "route" : "/api",
+      "type": "module",
+      "module" : "server/lib/api"    
+    }
+  ]
+}
