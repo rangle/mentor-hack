@@ -3,6 +3,8 @@
     "host": "ds033067.mongolab.com",
     "port": "33067",
     "db": "mentor-hack",
-    "schemas": "./server/schemas.js"
+    "schemas": "./server/schemas.js",
+    "username": "abdella@rangle.io",
+    "password": "m3anstack"
   }
 ]
