@@ -39,5 +39,7 @@
     "test": "mocha"
   },
   "author": "rangle.io",
-  "license": "commercial"
+  "license": "commercial",
+  "postinstall": "./node_modules/bower/bin/bower install"
 }
+
