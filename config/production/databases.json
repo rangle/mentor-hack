@@ -4,7 +4,7 @@
     "port": "33067",
     "db": "mentor-hack",
     "schemas": "./server/schemas.js",
-    "username": "abdella@rangle.io",
+    "user": "abdella@rangle.io",
     "pass": "m3anstack"
   }
 ]
