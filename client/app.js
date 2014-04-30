@@ -14,11 +14,7 @@ angular.module('app', [
 ])
 .config(function($routeProvider) {
   $routeProvider
-    .when('/', {
-      templateUrl: 'client/sections/main/main.html',
-      controller: 'MainCtrl'
-    })
-    .when('/schedule',  {
+    .when('/',  {
       templateUrl: 'client/sections/schedule/schedule.html',
       controller: 'ScheduleCtrl'
     })
