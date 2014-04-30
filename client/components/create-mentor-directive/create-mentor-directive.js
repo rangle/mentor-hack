@@ -5,12 +5,20 @@ angular.module('app')
 
     return{
       restrict: 'A',
+      scope:{
+        edit: '='
+      },
       link: function(scope, element, attrs){
 
         var showCreateMentorModal = function() {
           $modal.open({
             templateUrl : '/client/components/create-mentor-directive/create-mentor-modal.html',
-            controller  : 'CreateMentorCtrl'
+            controller  : 'CreateMentorCtrl',
+            resolve: {
+              mentor: function(){
+                return scope.edit;
+              }
+            }
           });
         };
 
@@ -21,18 +29,33 @@ angular.module('app')
 
   }])
 
-.controller('CreateMentorCtrl', function($scope, $modalInstance, koast){
+.controller('CreateMentorCtrl', function($scope, $modalInstance, koast, mentor){
 
-    $scope.mentorTypes = ['Designer', 'Developer', 'Doctor-Person'];
+    $scope.mentorTypes = [
+      {type: 'developer', label: 'Developer'},
+      {type: 'clinitian', label: 'Clinical Expert'},
+      {type: 'designer', label: 'Designer'}
+    ];
     $scope.mentor = {
       skills : [''],
       isMentor: true
     };
 
+    if(mentor){
+      $scope.mentor = mentor;
+    }
+
     $scope.saveMentor = function() {
-      koast.createResource('users', $scope.mentor).then(function(){
-        console.log('created new mentor!');
-      })
+      if(mentor){
+        $scope.mentor.save();
+        $modalInstance.dismiss();
+        console.log('updated mentor');
+      }else{
+        koast.createResource('users', $scope.mentor).then(function(){
+          console.log('created new mentor!');
+          $modalInstance.dismiss();
+        })
+      }
     };
 
     $scope.cancel = function() {
