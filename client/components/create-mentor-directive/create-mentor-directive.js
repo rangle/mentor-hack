@@ -21,14 +21,18 @@ angular.module('app')
 
   }])
 
-.controller('CreateMentorCtrl', function($scope, $modalInstance){
+.controller('CreateMentorCtrl', function($scope, $modalInstance, koast){
 
     $scope.mentorTypes = ['Designer', 'Developer', 'Doctor-Person'];
     $scope.mentor = {
-      skills : ['']
+      skills : [''],
+      isMentor: true
     };
 
     $scope.saveMentor = function() {
+      koast.createResource('users', $scope.mentor).then(function(){
+        console.log('created new mentor!');
+      })
     };
 
     $scope.cancel = function() {
