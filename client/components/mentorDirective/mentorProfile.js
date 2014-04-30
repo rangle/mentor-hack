@@ -5,7 +5,7 @@
 
 angular.module('app.components.directives', [])
 
-  .directive('mentorProfile', function () {
+  .directive('mentorProfile', function ($log) {
 
     return{
       restrict: 'A',
@@ -47,6 +47,7 @@ angular.module('app.components.directives', [])
           if (scope.bookings[index] === '') {
             scope.bookings[index] = $data.displayName;
             scope.mentor.bookings[index] = $data.displayName;
+            scope.mentor.isMentor = true;
             scope.mentor.save()
               .then(null, $log.error);
           } else {
