@@ -31,6 +31,7 @@ angular.module('app')
 //    $scope.teams = server.teams;
 
     $scope.predicate = '';
+    $scope.searchByName = '';
 
     $scope.isAuthenticated = true;
 
