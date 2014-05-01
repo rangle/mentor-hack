@@ -1,15 +1,13 @@
 <html ng-app="app">
-<head>
-  <script src="/client/bower-components/jquery/dist/jquery.min.js"></script>
-  <script src="/client/bower-components/ng-file-upload-shim/angular-file-upload-shim.min.js"></script>
-  <script src="/client/bower-components/angular/angular.min.js"></script>
-  <script src="/client/bower-components/ng-file-upload/angular-file-upload.min.js"></script>
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/client/less/app.css"/>
-</head>
-
-<body>
-
+  <head>
+    <script src="/client/bower-components/jquery/dist/jquery.min.js"></script>
+    <script src="/client/bower-components/ng-file-upload-shim/angular-file-upload-shim.min.js"></script>
+    <script src="/client/bower-components/angular/angular.min.js"></script>
+    <script src="/client/bower-components/ng-file-upload/angular-file-upload.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/client/less/app.css"/>
+  </head>
+  <body>
     <div class="container" data-ng-class="{'expanded': !isAuthenticated}" ng-view>
 
     </div><!--/.container-->
@@ -24,15 +22,14 @@
     <script src="/client/bower-components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="/client/bower-components/angular-dragdrop-ganarajpr/draganddrop.js"></script>
 
-    <script src="/client/core/server/server.js"></script>
-
     <!-- App -->
     <script src="/client/app.js"></script>
-    <script src="/client/sections/schedule/schedule-controller.js"></script>
     <script src="/client/components/create-mentor-directive/create-mentor-directive.js"></script>
-
-    <!-- Directives -->
-    <script src="/client/components/mentorDirective/mentorProfile.js"></script>
+    <script src="/client/components/main-controller/main-controller.js"></script>
+    <script src="/client/components/mentor-schedule/mentor-schedule-directive.js"></script>
+    <script src="/client/components/mentor-schedule/mentor-schedule-service.js"></script>
     <script src="/client/components/team-directive/team-directive.js"></script>
-</body>
+    <script src="/client/core/server/server.js"></script>
+    <script src="/client/sections/schedule/schedule-controller.js"></script>
+  </body>
 </html>

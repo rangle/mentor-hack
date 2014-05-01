@@ -12,7 +12,7 @@
   "bio" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   "skills" : [ "UI", "UX", "Illustration" ],
   "photo" : "photo.jpg",
-  "bookings" : [ null, "team1" ],
+  "bookings" : [],
   "name" : "Mike Costanzo",
   "isMentor" : true,
   "email" : "mike@event.com"
@@ -22,7 +22,7 @@
   "bio" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   "skills" : [ "Life", "Your mother", "Master-class coding abilities" ],
   "photo" : "photo.jpg",
-  "bookings" : [ null, "team2", "team2", "team1" ],
+  "bookings" : [],
   "name" : "Rafael Khan",
   "isMentor" : true,
   "email" : "rafael@event.com"

@@ -25,14 +25,9 @@
 
       <div class="time-slots">
         <div class="slot"
-          ng-repeat="slot in bookings track by $index"
+          ng-repeat="slot in schedule.slots track by $index"
           ui-on-Drop="onDrop($event, $index, $data)">
-          <div class="time">
-            {{time($index)}}
-          </div><div class="team"
-               ng-class="taken(slot)">
-            {{slot}}
-          </div>
+          <div class="time">{{ slot.label }}</div><div class="team" ng-class="taken(slot)">{{ slot.team.displayName }}</div>
         </div>
       </div>
       <div class="row">

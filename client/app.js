@@ -5,6 +5,8 @@
 
 angular.module('app', [
   'app.components.directives',
+  'app.components.main-controller',
+  'app.components.mentor-schedule-directive',
   'ngRoute',
   'ui.bootstrap',
   'app.server',
@@ -27,7 +29,6 @@ angular.module('app', [
     .then(function() {
       $rootScope.isAuthenticated = _koastUser.isAuthenticated;
       if (!_koastUser.isAuthenticated) {
-        //_koastUser.initiateOauthAuthentication();
         console.log("Unauthenticated user");
       }
       console.log('*Users:', server.users);
