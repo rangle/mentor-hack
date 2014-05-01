@@ -54,8 +54,9 @@
     </div>
 
     <div class="modal-footer">
+      <button ng-if="deleteAvailable" class="btn btn-danger" type="submit" ng-click="deleteMentor()">Delete</button>
       <button class="btn btn-primary" type="submit" ng-click="saveMentor()">OK</button>
-      <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+      <button class="btn btn-info" ng-click="cancel()">Cancel</button>
     </div>
   </form>
 
