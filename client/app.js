@@ -25,7 +25,8 @@ angular.module('app', [
 .run(['server', '$log', '_koastUser', '$rootScope', function(server, $log, _koastUser, $rootScope) {
   server.whenReady()
     .then(function() {
-      $rootScope.isAuthenticated = _koastUser.isAuthenticated;
+      //$rootScope.isAuthenticated = _koastUser.isAuthenticated;
+      $rootScope.isAuthenticated = true;
       if (!_koastUser.isAuthenticated) {
         //_koastUser.initiateOauthAuthentication();
         console.log("Unauthenticated user");

@@ -5,10 +5,10 @@ angular.module('app')
 
     return{
       restrict: 'A',
-      scope:{
+      $scope:{
         edit: '='
       },
-      link: function(scope, element, attrs){
+      link: function ($scope, element, attrs){
 
         var showCreateMentorModal = function() {
           $modal.open({
@@ -16,7 +16,7 @@ angular.module('app')
             controller  : 'CreateMentorCtrl',
             resolve: {
               mentor: function(){
-                return scope.edit;
+                return $scope.edit;
               }
             }
           });
@@ -99,7 +99,57 @@ angular.module('app')
       $scope.mentor.skills.splice(idx, 1);
     };
 
+
+
+    var progressFn = function(evt) {
+        var pct = parseInt(100.0 * evt.loaded / evt.total);
+        elem.attr('data-content', ['uploading ... ', pct, '%'].join(''));
+      },
+      errFn = function(data, status, headers, config) {
+        console.error(data);
+        $scope.uploading = false;
+
+        elem.attr('data-content', 'uploading');
+      };
+    
+    $scope.uploading = false;
+
     $scope.onFileSelect = function($files) {
+      $scope.uploading = true;
+      //$files: an array of files selected, each file has name, size, and type.
+      for (var i = 0; i < $files.length; i++) {
+        var $file = $files[i];
+        $scope.upload = $upload.upload({
+          url: 'api/img-upload', //upload.php script, node.js route, or servlet url
+          // method: POST or PUT,
+          // headers: {'headerKey': 'headerValue'}, withCredential: true,
+          data: {myObj: $scope.myModelObj},
+          file: $file,
+          
+          //fileFormDataName: myFile,
+          
+          //formDataAppender: function(formData, key, val){} 
+        }).progress(progressFn).success(function(data, status, headers, config) {
+          // file is uploaded successfully
+          elem.attr('data-content', 'fetching thumbnail ...');
+          var del = new Image();
+          del.onload = function() {
+            $scope.$apply(function() {
+              $scope.mentor.photo = data.url;
+              $scope.uploading = false;
+              elem.attr('data-content', 'done');
+            });
+          }
+          del.src = data.url;
+          
+          elem.attr('data-content', 'uploading');
+        }).error(errFn)
+        //.then(success, error, progress); 
+      }
+    };
+
+
+    /*$scope.onFileSelect = function($files) {
       var file = $files[0];
 
       $upload.upload({url:'server/lib/imageUpload.js', method: 'POST', data: $scope.mentor, file: file})
@@ -122,5 +172,5 @@ angular.module('app')
 //      };
 
 //      fr.readAsDataURL(file);
-    };
+    };*/
   });
