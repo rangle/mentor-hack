@@ -30,7 +30,7 @@ angular.module('app')
   }])
 
   //This controller is specifically tied to the Create/Edit Mentor Modal
-.controller('CreateMentorCtrl', function($scope, $modalInstance, koast, mentor, $rootScope){
+.controller('CreateMentorCtrl', function($scope, $modalInstance, koast, mentor, $rootScope, $upload){
 
     //This function tells the controller to update the list via an emit, used when adding or deleting mentors
     var updateMentorList = function(){
@@ -101,18 +101,26 @@ angular.module('app')
 
     $scope.onFileSelect = function($files) {
       var file = $files[0];
-      var fr = new FileReader();
 
-      fr.onload = function() {
-        var img = new Image();
-        img.onload = function() {
-          var uploadBtn = document.getElementById('upload-button');
-          uploadBtn.style.backgroundImage = 'url(' + this.src + ')';
-        };
+      $upload.upload({url:'server/lib/imageUpload.js', method: 'POST', data: $scope.mentor, file: file})
+        .progress(function(evt){
 
-        img.src = fr.result;
-      };
+        }).success(function(response){
 
-      fr.readAsDataURL(file);
+        });
+
+//      var fr = new FileReader();
+
+//      fr.onload = function() {
+//        var img = new Image();
+//        img.onload = function() {
+//          var uploadBtn = document.getElementById('upload-button');
+//          uploadBtn.style.backgroundImage = 'url(' + this.src + ')';
+//        };
+//
+//        img.src = fr.result;
+//      };
+
+//      fr.readAsDataURL(file);
     };
   });
