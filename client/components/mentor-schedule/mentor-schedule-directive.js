@@ -25,7 +25,7 @@ angular.module('app.components.mentor-schedule-directive', [
       scope.schedule = schedule.getScheduleForMentor(scope.mentor);
 
       scope.taken = function (team) {
-        if (team === '') {
+        if (!team.team._id) {
           return;
         } else if (['Lunch', 'Dinner'].indexOf(team) >= 0) {
           return 'break';

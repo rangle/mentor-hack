@@ -50,7 +50,9 @@ angular.module('app.components.mentor-schedule', [
             displayName: '???????'
           }
         } else {
-          slot.team = {}
+          slot.team = {
+            isLunch: i === 2 //This is noon
+          }
         };
 
         slot.label = getHourLabel(i, 10); // Start at 10am for now.
