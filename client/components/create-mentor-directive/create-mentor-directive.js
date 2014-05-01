@@ -36,6 +36,7 @@ angular.module('app')
     var updateMentorList = function(){
       $rootScope.$emit('updateMentorList');
     };
+
     $scope.mentorTypes = [
       {type: 'developer', label: 'Developer'},
       {type: 'clinician', label: 'Clinical Expert'},
