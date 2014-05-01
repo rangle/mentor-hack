@@ -10,7 +10,8 @@ angular.module('app', [
   'ui.bootstrap',
   'app.server',
   'ngDragDrop',
-  'angularFileUpload'
+  'angularFileUpload',
+  'koast-user'
 ])
 .config(function($routeProvider) {
   $routeProvider
@@ -22,11 +23,17 @@ angular.module('app', [
       redirectTo:'/'
     });
 })
-.run(['server', '$log', function(server, $log) {
+.run(['server', '$log', '_koastUser', '$rootScope', function(server, $log, _koastUser, $rootScope) {
   server.whenReady()
     .then(function() {
+      $rootScope.isAuthenticated = _koastUser.isAuthenticated;
+      if (!_koastUser.isAuthenticated) {
+        //_koastUser.initiateOauthAuthentication();
+        console.log("Unauthenticated user");
+      }
       console.log('*Users:', server.users);
       console.log('*Teams:', server.teams);
+
     })
     .then(null, $log.error);
 }]);
