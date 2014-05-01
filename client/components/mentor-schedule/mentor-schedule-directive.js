@@ -8,14 +8,14 @@ angular.module('app.components.mentor-schedule-directive', [
   'app.components.mentor-schedule'
 ])
 
-.directive('mentorProfile', ['schedule', '$log',
+.directive('mentorSchedule', ['schedule', '$log',
   function (schedule, $log) {
     'use strict';
     var directive = {
       restrict: 'A',
       templateUrl: 'client/components/mentor-schedule/mentor-schedule.html',
       scope: {
-        'mentor': '=mentorProfile',
+        'mentor': '=mentorSchedule',
         'teams': '=teams'
       },
     };

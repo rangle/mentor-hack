@@ -4,8 +4,6 @@
 // declaring the dependencies and maybe having a run block.
 
 angular.module('app', [
-  'app.components.directives',
-  'app.components.main-controller',
   'app.components.mentor-schedule-directive',
   'ngRoute',
   'ui.bootstrap',
@@ -27,7 +25,7 @@ angular.module('app', [
 .run(['server', '$log', '_koastUser', '$rootScope', function(server, $log, _koastUser, $rootScope) {
   server.whenReady()
     .then(function() {
-      $rootScope.isAuthenticated = _koastUser.isAuthenticated;
+      $rootScope.isAuthenticated = true; //_koastUser.isAuthenticated;
       if (!_koastUser.isAuthenticated) {
         console.log("Unauthenticated user");
       }
