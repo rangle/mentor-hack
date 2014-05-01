@@ -39,7 +39,7 @@ angular.module('app')
 
     $scope.mentorTypes = [
       {type: 'developer', label: 'Developer'},
-      {type: 'clinitian', label: 'Clinical Expert'},
+      {type: 'clinician', label: 'Clinical Expert'},
       {type: 'designer', label: 'Designer'}
     ];
     $scope.mentor = {
