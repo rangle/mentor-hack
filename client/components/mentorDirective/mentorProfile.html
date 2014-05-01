@@ -9,7 +9,7 @@
             <p>{{mentor.bio}}</p>
           </div>
           <div class="skillset">  
-            <div class="mentor-icon"><img src="client/img/clinician.svg"></div>
+            <div class="mentor-icon"><img ng-src="client/img/{{mentor.role}}.svg"></div>
             <h4 ng-show="mentor.skills.length > 0">Speciality Skillset</h4>
             <ol>
               <li ng-repeat="skill in mentor.skills">{{skill}}</li>
