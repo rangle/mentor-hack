@@ -1,12 +1,25 @@
 'use strict';
 
 angular.module('app')
-  .controller('ScheduleCtrl', function($scope, server) {
+  .controller('ScheduleCtrl', function($scope, server, $rootScope, koast, $log) {
 
-    $scope.mentors = server.users;
+
+    var mentorQuery = {
+      isMentor: true
+    };
+
+    var getUsers = function(query){
+      koast.queryForResources('users', query)
+        .then(function (users) {
+          $scope.mentors = users;
+        }, $log.error);
+    };
+
+    getUsers(mentorQuery);
     $scope.teams = server.teams;
     $scope.predicate = '';
-    $scope.searchByName = '';
+
+//    $scope.isAuthenticated = true;
 
     $scope.setMentorPredicate = function(predicate) {
       $scope.predicate = predicate;
@@ -16,9 +29,8 @@ angular.module('app')
       $scope.predicate = '';
     };
 
-    $scope.$on('updateMentorList', function(e){
-      e.stopPropagation();
-      $scope.mentors = server.users;
+    $rootScope.$on('updateMentorList', function(e){
+      getUsers(mentorQuery);
     });
 
     $scope.mentorFilter = [
