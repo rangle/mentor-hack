@@ -32,6 +32,11 @@ angular.module('app')
   //This controller is specifically tied to the Create/Edit Mentor Modal
 .controller('CreateMentorCtrl', function($scope, $modalInstance, koast, mentor){
 
+    //This function tells the controller to update the list via an emit, used when adding or deleting mentors
+    var updateMentorList = function(){
+      $scope.$emit('updateMentorList');
+    };
+
     $scope.mentorTypes = [
       {type: 'developer', label: 'Developer'},
       {type: 'clinitian', label: 'Clinical Expert'},
@@ -60,6 +65,7 @@ angular.module('app')
       }else{
         koast.createResource('users', $scope.mentor).then(function(){
           console.log('created new mentor!');
+          updateMentorList();
           $modalInstance.dismiss();
         })
       }
@@ -68,6 +74,7 @@ angular.module('app')
     $scope.deleteMentor = function(){
       $scope.mentor.delete();
       console.log('Mentor Deleted!!!!!');
+      updateMentorList();
       $modalInstance.dismiss();
     };
 
