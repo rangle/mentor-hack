@@ -19,20 +19,22 @@
 
   <!-- Filter -->
   <div id="FilterMenu" class="padding-bottom">
-    <div class="col-xs-9">
-      <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control">
+    <div data-ng-class="{'col-xs-9':isAuthenticated,'col-xs-12':!isAuthenticated}">
+      <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control hidden-xs">
         <option value="">All</option>
-
       </select>
+      <div class="btn-group visible-xs">
+        <button class="btn btn-default" data-ng-class="{'btn-info': predicate==''}" data-ng-click="resetMentorPredicate(mentor)">All</button>
+        <button data-ng-repeat="mentor in mentorFilter" class="btn btn-default" data-ng-class="{'btn-info': predicate==mentor}" data-ng-bind="mentor.label" data-ng-click="setMentorPredicate(mentor)"></button>
+      </div>
     </div>
-    <div class="fcol-xs-3">
+    <div class="fcol-xs-3" data-ng-if="isAuthenticated">
       <button type="submit" class="btn btn-primary" create-mentor>Create Mentor</button>
     </div>
   </div>
 
   <!-- Mentor -->
-  <div ng-repeat="mentor in mentors | filter:predicate.type" teams="teams"
-       mentor-profile="mentor" ng-class-odd="">
+  <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name'" teams="teams" mentor-profile="mentor" ng-class-odd="">
 
   </div>
 </div>
