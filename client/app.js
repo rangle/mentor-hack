@@ -4,7 +4,6 @@
 // declaring the dependencies and maybe having a run block.
 
 angular.module('app', [
-  'app.components.main-controller',
   'app.components.directives',
   'ngRoute',
   'ui.bootstrap',

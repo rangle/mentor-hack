@@ -6,6 +6,7 @@ angular.module('app')
     $scope.mentors = server.users;
     $scope.teams = server.teams;
     $scope.predicate = '';
+    $scope.searchByName = '';
 
     $scope.setMentorPredicate = function(predicate) {
       $scope.predicate = predicate;
