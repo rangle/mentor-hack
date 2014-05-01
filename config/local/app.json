@@ -1,33 +1,31 @@
 {
   "portNumber": 3000,
   "authentication": {
-    "cookieSecret" : "c3r3brum hom1nis",
+    "cookieSecret": "c3r3brum hom1nis",
     "strategy": "password"
   },
   "lessPaths": [
-    ["/client", "client"]
+    [
+      "/client",
+      "client"
+    ]
   ],
-  "indexHtml" : "client/index.html",
-  "routes" : [
+  "indexHtml": "client/index.html",
+  "routes": [
     {
-      "route" : "/client",
+      "route": "/client",
       "type": "static",
-      "path" : "client"    
+      "path": "client"
     },
     {
-      "route" : "/bower",
+      "route": "/bower",
       "type": "static",
-      "path" : "client/bower-components"
+      "path": "client/bower-components"
     },
     {
-      "route" : "/api",
+      "route": "/api",
       "type": "module",
-      "module" : "server/lib/api"    
+      "module": "server/lib/api"
     }
-  ],
-  "aws": {
-    "accessKeyId": "",
-    "secretAccessKey": "",
-    "region": "us-east-1"
-  }
+  ]
 }
