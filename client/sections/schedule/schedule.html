@@ -16,7 +16,7 @@
 </div>
 
 <div id="RightPanel">
-
+  <input type="text" class="form-control" ng-model="searchByName"/>
   <!-- Filter -->
   <div id="FilterMenu" class="padding-bottom">
     <div data-ng-class="{'col-xs-9':isAuthenticated,'col-xs-12':!isAuthenticated}">
@@ -34,7 +34,7 @@
   </div>
 
   <!-- Mentor -->
-  <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name'" teams="teams" mentor-profile="mentor" ng-class-odd="">
+  <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-profile="mentor" ng-class-odd="">
 
   </div>
 </div>
