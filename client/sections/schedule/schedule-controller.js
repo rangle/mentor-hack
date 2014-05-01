@@ -19,7 +19,7 @@ angular.module('app')
     $scope.teams = server.teams;
     $scope.predicate = '';
 
-//    $scope.isAuthenticated = true;
+    $scope.isAuthenticated = true;
 
     $scope.setMentorPredicate = function(predicate) {
       $scope.predicate = predicate;
