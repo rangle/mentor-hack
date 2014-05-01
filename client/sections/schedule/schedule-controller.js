@@ -7,9 +7,17 @@ angular.module('app')
     $scope.teams = server.teams;
     $scope.predicate = '';
 
+    $scope.setMentorPredicate = function(predicate) {
+      $scope.predicate = predicate;
+    }
+
+    $scope.resetMentorPredicate = function(predicate) {
+      $scope.predicate = '';
+    }
+
     $scope.mentorFilter = [
       {type: 'developer', label: 'Developer'},
-      {type: 'clinitian', label: 'Clinical Expert'},
+      {type: 'clinician', label: 'Clinical Expert'},
       {type: 'designer', label: 'Designer'}
     ];
   });
