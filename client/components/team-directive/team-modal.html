@@ -3,5 +3,6 @@
 
   <input id="teamModalName" type="text" class="form-control" ng-model="team.displayName"/>
 
-  <div id="teamModalSave" class="btn btn-success">Save</div>
+  <div ng-disabled="team.displayName.length < 3 || !team.displayName"
+       id="teamModalSave" class="btn btn-success" ng-click="saveTeam()">Save</div>
 </div>
