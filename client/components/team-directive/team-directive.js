@@ -23,8 +23,19 @@ angular.module('app')
     }
   })
 
-.controller('teamModalCtrl', function($scope, $modalInstance){
+.controller('teamModalCtrl', function($scope, $modalInstance, koast, server){
 
     $scope.team = {};
+
+    $scope.saveTeam = function () {
+      koast.createResource('teams', $scope.team).then(function () {
+
+        return koast.queryForResources('teams', {displayName: $scope.team.displayName});
+
+      }).then(function(team){
+        server.teams.push(team[0]); //Todo: very hacky, queried instead of get - but gets aren't working
+        $modalInstance.dismiss();
+      })
+    }
 
   });
