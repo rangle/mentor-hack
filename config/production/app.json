@@ -23,10 +23,5 @@
       "type": "module",
       "module" : "server/lib/api"    
     }
-  ],
-  "aws": {
-    "accessKeyId": "",
-    "secretAccessKey": "",
-    "region": "us-east-1"
-  }
+  ]
 }
