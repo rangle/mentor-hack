@@ -1,7 +1,8 @@
 {
   "portNumber": 3000,
   "authentication": {
-    "cookieSecret" : "c3r3brum hom1nis"
+    "cookieSecret" : "c3r3brum hom1nis",
+    "strategy": "password"
   },
   "lessPaths": [
     ["/client", "client"]
