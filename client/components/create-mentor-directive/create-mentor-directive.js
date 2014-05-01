@@ -29,6 +29,7 @@ angular.module('app')
 
   }])
 
+  //This controller is specifically tied to the Create/Edit Mentor Modal
 .controller('CreateMentorCtrl', function($scope, $modalInstance, koast, mentor){
 
     $scope.mentorTypes = [
@@ -41,21 +42,33 @@ angular.module('app')
       isMentor: true
     };
 
+    //If this is true, then we are in edit mode - $scope.mentor should be tied to the passed in mentor and
+    //The option to delete mentors should be present
     if(mentor){
       $scope.mentor = mentor;
+      $scope.deleteAvailable = true;
     }
 
     $scope.saveMentor = function() {
+      //If 'mentor' exists, then it means that this directive is being used for editing
       if(mentor){
         $scope.mentor.save();
         $modalInstance.dismiss();
         console.log('updated mentor');
+
+        //If 'mentor' does not exist, it mean that this is currently is 'create new mentor' mode
       }else{
         koast.createResource('users', $scope.mentor).then(function(){
           console.log('created new mentor!');
           $modalInstance.dismiss();
         })
       }
+    };
+
+    $scope.deleteMentor = function(){
+      $scope.mentor.delete();
+      console.log('Mentor Deleted!!!!!');
+      $modalInstance.dismiss();
     };
 
     $scope.cancel = function() {
