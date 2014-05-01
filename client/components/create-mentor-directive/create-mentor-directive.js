@@ -30,11 +30,11 @@ angular.module('app')
   }])
 
   //This controller is specifically tied to the Create/Edit Mentor Modal
-.controller('CreateMentorCtrl', function($scope, $modalInstance, koast, mentor){
+.controller('CreateMentorCtrl', function($scope, $modalInstance, koast, mentor, $rootScope){
 
     //This function tells the controller to update the list via an emit, used when adding or deleting mentors
     var updateMentorList = function(){
-      $scope.$emit('updateMentorList');
+      $rootScope.$emit('updateMentorList');
     };
 
     $scope.mentorTypes = [
