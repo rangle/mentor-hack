@@ -12,6 +12,4 @@ angular.module('app')
       {type: 'clinitian', label: 'Clinical Expert'},
       {type: 'designer', label: 'Designer'}
     ];
-
-
   });

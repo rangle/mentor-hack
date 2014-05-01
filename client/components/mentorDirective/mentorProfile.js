@@ -15,8 +15,16 @@ angular.module('app.components.directives', [])
         'teams': '=teams'
       },
       link: function (scope, element, attrs) {
+        scope.mentor.ui = {
+          "scheduleShown": true
+        };
+
+        scope.toggleScheduleShown = function() {
+          scope.mentor.ui.scheduleShown = !scope.mentor.ui.scheduleShown;
+        };
 
         scope.bookings = ['', '', '', '', '', '', '', '', ''];
+        if (_.isEmpty(scope.mentor.bookings)) scope.mentor.bookings = [];
 
         //Iterates over each booking currently on the mentor, and if not null (null means this spot is empty)
         //apply the booking to the overall scope.bookings, which is bound to the view
@@ -48,7 +56,7 @@ angular.module('app.components.directives', [])
             scope.bookings[index] = $data.displayName;
             scope.mentor.bookings[index] = $data.displayName;
             scope.mentor.isMentor = true;
-            scope.mentor.save()
+            _.omit(scope.mentor, "ui").save()
               .then(null, $log.error);
           } else {
             var r = confirm('This is slot is already taken, do you want to overwrite it?');
