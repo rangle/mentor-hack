@@ -19,7 +19,10 @@ exports.routes = [
   ['get', 'users', mapper.get('users')],
   ['get', 'teams', mapper.get('teams')],
   ['put', 'users/:_id', mapper.put('users')],
+  ['put', 'teams/:_id', mapper.put('teams')],
   ['post', 'users', mapper.post('users')],
-  ['post', 'teams', mapper.post('teams')]
+  ['post', 'teams', mapper.post('teams')],
+  ['del', 'users/:_id', mapper.del('users')],
+  ['del', 'teams/:_id', mapper.del('teams')]
 
 ];
