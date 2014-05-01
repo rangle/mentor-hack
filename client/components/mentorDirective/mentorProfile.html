@@ -1,0 +1,42 @@
+<div class="mentor">
+  <div class="col-md-6">
+
+      <section class="profile">
+        <div class="thumbnail">
+          <img ng-src="{{mentor.profileImgUrl}}" alt="Profile Image" class="profile-image">
+          <div class="caption">
+            <h3>{{mentor.name}}</h3>
+            <p>{{mentor.bio}}</p>
+          </div>
+          <div class="skillset">  
+            <div class="mentor-icon"><img src="client/img/clinician.svg"></div>
+            <h4 ng-show="mentor.skills.length > 0">Speciality Skillset</h4>
+            <ol>
+              <li ng-repeat="skill in mentor.skills">{{skill}}</li>
+            </ol>
+          </div>
+          <div class="edit btn-group">
+          <button type="button" class="btn btn-primary" role="button" create-mentor="" edit="mentor">Edit</button>
+          <button type="button" class="btn visible-xs visible-sm" role="button" data-ng-class="{'btn-success': mentor.ui.scheduleShown}" data-ng-click="toggleScheduleShown()">Schedule</button>
+        </div>
+      </section>
+  </div>
+  <div class="schedule col-md-6" data-ng-show="mentor.ui.scheduleShown">
+
+      <div class="time-slots">
+        <div class="slot"
+          ng-repeat="slot in bookings track by $index"
+          ui-on-Drop="onDrop($event, $index, $data)">
+          <div class="time">
+            {{time($index)}}
+          </div><div class="team"
+               ng-class="taken(slot)">
+            {{slot}}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <button type="button" class="btn visible-xs visible-sm" role="button" data-ng-class="{'btn-success': mentor.ui.scheduleShown}" data-ng-click="toggleScheduleShown()">Schedule</button>
+      </div>
+  </div>
+</div>
