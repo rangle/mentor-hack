@@ -19,6 +19,7 @@ angular.module('app.components.directives', [])
           "scheduleShown": true
         };
 
+        scope.isAuthenticated = true;
         scope.toggleScheduleShown = function() {
           scope.mentor.ui.scheduleShown = !scope.mentor.ui.scheduleShown;
         };
