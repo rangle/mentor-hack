@@ -21,7 +21,7 @@ angular.module('app.teams', [
       return promise;
     };
 
-    service.getTeams
+    //service.getTeams
 
     service.getById = function(desiredId) {
       _.find(service.all, function(item) {

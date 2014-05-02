@@ -5,7 +5,6 @@
 
 angular.module('app', [
   'app.components.mentor-schedule-directive',
-  'app.components.directives',
   'ngRoute',
   'ui.bootstrap',
   'app.server',
