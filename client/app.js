@@ -10,7 +10,9 @@ angular.module('app', [
   'app.server',
   'ngDragDrop',
   'angularFileUpload',
-  'koast-user'
+  'koast-user',
+  'fx.animations',
+  'ngAnimate'
 ])
 .config(function($routeProvider) {
   $routeProvider
