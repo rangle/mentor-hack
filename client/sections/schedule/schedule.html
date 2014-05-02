@@ -4,6 +4,7 @@
     </div>
     <!-- List of Teams  -->
     <div class="col-xs-12 col-md-12">
+      <h5 class="centeredHeader">Teams</h5>
         <div class="panel panel-default fx-fade-down fx-speed-1200" ng-class="{true: 'team-handle', false: 'break-handle' }[['Lunch', 'Dinner'].indexOf(team.displayName) == -1]" ui-draggable="true" drag="team" ng-repeat="team in teams track by $index">
             <div class="panel-body">
                 <div class="row">
@@ -12,7 +13,7 @@
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="col-xs-9"><span>{{team.displayName}}<span></div>
+                    <div class="col-xs-9"><span>{{team.displayName}}</span></div>
                     <div class="col-xs-2">
                         <span class="glyphicon glyphicon glyphicon-edit btn" create-team edit="team"></span>
                     </div>
@@ -43,6 +44,7 @@
     </div>
 
     <!-- Mentor -->
+  <h4 class="centeredHeader">List of Mentors</h4>
     <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200" ng-class-odd="">
 
     </div>
