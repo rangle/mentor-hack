@@ -79,20 +79,30 @@ console.log("here");
     $scope.predicate = '';
     
     $scope.login = function() {
-      var pass = prompt("Passcode?");
-      $http.post('/auth/login', {username: 'mentorhealth', password: pass})
-        .then(function (response) {
-          if (!response.data.isAdmin) {
-            console.error('Failed to login.');
+      if ($scope.isAuthenticated) {
+        $scope.isAuthenticated = false;
+      }
+      else {
+        var pass = prompt("Passcode?");
+        $http.post('/auth/login', {username: 'mentorhealth', password: pass})
+          .then(function (response) {
+            if (!response.data.isAdmin) {
+              console.error('Failed to login.');
+              $scope.isAuthenticated = false;
+            } else {
+              console.log(arguments);
+              $scope.isAuthenticated = true;
+            }
+          }, function() {
             $scope.isAuthenticated = false;
-          } else {
-            console.log(arguments);
-            $scope.isAuthenticated = true;
-          }
-        }, function() {
-          $scope.isAuthenticated = false;
-        });
+          });
+      }
     };
+    $scope.isAuthenticated = false;
+
+    $scope.getAuthenticationText = function() {
+      return $scope.isAuthenticated ? "Log out" : "Log in";
+    }
 
     _koastUser.getStatusPromise().then( function(data) {
       $scope.isAuthenticated = !!data;

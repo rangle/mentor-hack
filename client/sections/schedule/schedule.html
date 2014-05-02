@@ -26,8 +26,8 @@
 <div id="RightPanel">
     <!-- Filter -->
     <div id="FilterMenu" class="padding-bottom">
-        <div class="row"><button type="button" class="btn btn-success" data-ng-click="login()">Log in</button></div>
         <div data-ng-class="{'col-xs-9':isAuthenticated,'col-xs-12':!isAuthenticated}">
+            <button type="button" class="btn btn-success" data-ng-click="login()" data-ng-bind="getAuthenticationText()"></button>
             <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control">
                 <option value="">All</option>
                 <option value="">
