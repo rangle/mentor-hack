@@ -1,4 +1,3 @@
 {
-  "bucket": "mentor-hack",
-  "configFile": "config/aws-config/production.json"
+  "bucket": "mentor-hack"
 }
