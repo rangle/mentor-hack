@@ -8,12 +8,14 @@
             <h3>{{mentor.name}}</h3>
             <p>{{mentor.bio}}</p>
           </div>
-          <div class="skillset">  
-            <div class="mentor-icon"><img ng-src="client/img/{{mentor.role}}.svg"></div>
+          <div class="row skillset">  
+            <div class="col-md-6"><img ng-src="client/img/{{mentor.role}}.svg" class="mentor-icon"></div>
+            <div class="col-md-6">
             <h4 ng-show="mentor.skills.length > 0">Speciality Skillset</h4>
             <ol>
               <li ng-repeat="skill in mentor.skills">{{skill}}</li>
             </ol>
+          </div>
           </div>
           <div class="edit btn-group">
           <button type="button" class="btn btn-primary" role="button" create-mentor="" edit="mentor">Edit</button>
