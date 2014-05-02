@@ -1,13 +1,36 @@
 #LeftPanel {
+    .team-handle {
+        color: #fff;
+        background-color: #F7AB97;
+        border-color: #FE8D70;
+    }
     .panel-body {
-        padding: 15px;
-        text-align: center;
+        padding: 10px 15px;
+        border-color:$primary;
+        span {
+            line-height: 28px;
+        }
     }
     .glyphicon-edit {
         padding: 0;
-
-        &:hover{
-        	color:#E41E25;
+        top: 0;
+        &:hover {
+            color:#428bca;
+        }
+    }
+}
+.circle-container {
+    padding: 0 0 0 5%;
+    .circle {
+        position:relative;
+        width:8px;
+        height:8px;
+        border-radius:50%;
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 2px;
+        &:last-child {
+            margin-bottom: 0;
         }
     }
 }
