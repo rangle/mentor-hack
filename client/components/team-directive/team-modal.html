@@ -3,6 +3,10 @@
 
   <input id="teamModalName" type="text" class="form-control" ng-model="team.displayName"/>
 
-  <div ng-disabled="team.displayName.length < 3 || !team.displayName"
-       id="teamModalSave" class="btn btn-success" ng-click="saveTeam()">Save</div>
+  <div id="teamButtonBar">
+    <div ng-disabled="team.displayName.length < 3 || !team.displayName"
+         id="teamModalSave" class="btn btn-success" ng-click="saveTeam()">Save</div>
+    <div ng-if="deleteable" class="btn btn-danger" ng-click="deleteTeam()">Delete</div>
+  </div>
+
 </div>
