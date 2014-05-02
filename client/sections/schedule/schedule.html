@@ -1,7 +1,7 @@
 <div id="LeftPanel" data-ng-if="isAuthenticated">
     <div id="TeamOptions" class="row">
         <div class="btn btn-success" create-team style="margin: 20px 0 30px 28%">Create Team</div>
-        <div class="row"><button type="button" class="btn btn-success" data-ng-click="login()">Log in</button></div>
+        <!-- <div class="row"><button type="button" class="btn" initiate-authentication="initiateAuthentication">Log in</button></div> -->
     </div>
     <!-- List of Teams  -->
     <div class="col-xs-12 col-md-12">
@@ -26,6 +26,7 @@
 <div id="RightPanel">
     <!-- Filter -->
     <div id="FilterMenu" class="padding-bottom">
+        <div class="row"><button type="button" class="btn btn-success" data-ng-click="login()">Log in</button></div>
         <div data-ng-class="{'col-xs-9':isAuthenticated,'col-xs-12':!isAuthenticated}">
             <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control">
                 <option value="">All</option>

@@ -1,7 +1,54 @@
 'use strict';
+/*
+angular.module('app').directive('initiateAuthentication', ['$modal',
+  function($modal) {
 
-angular.module('app')
-  .controller('ScheduleCtrl', function($scope, server, $rootScope, koast, $http, $log, authorization) {
+    return{
+      restrict: 'A',
+      link: function(scope, element, attrs){
+console.log("here");
+        var showAuthenticationModal = function() {
+          $modal.open({
+            templateUrl : '/client/components/authentication/authentication.tpl.html',
+            controller  : 'AuthCtrl'
+          });
+        };
+
+        element.on('click', showAuthenticationModal);
+
+      }
+    }
+
+  }
+])
+.controller('AuthCtrl', ["$scope", "$modalInstance", "$http", function($scope, $modalInstance, $http){
+  console.log("here in AuthCtrl");
+  $scope.login = function () {
+        console.log('Login:', $scope.username, $scope.password);
+        var config = {
+          params: {
+            username: $scope.username,
+            password: $scope.password
+          }
+        };
+        return $http.post('/auth/login', {username: $scope.username, password: $scope.password})
+          .then(function (response) {
+            //setUserData(response);
+            //authenticationDeferred.resolve();
+            $rootScope.isAuthenticated = true;
+            $modalInstance.dismiss();
+          }).fail(function (err) {
+            console.error(err);
+            $modalInstance.dismiss();
+          });
+    };
+
+    $scope.cancel = function() {
+      $modalInstance.dismiss();
+    };
+
+}])*/
+  angular.module('app').controller('ScheduleCtrl', function($scope, server, $rootScope, koast, _koastUser, $http, $log, authorization) {
 
 
     var mentorQuery = {
@@ -30,26 +77,26 @@ angular.module('app')
     getTeams(teamQuery);
 //    $scope.teams = server.teams;
     $scope.predicate = '';
-
+    
     $scope.login = function() {
       var pass = prompt("Passcode?");
       $http.post('/auth/login', {username: 'mentorhealth', password: pass})
         .then(function (response) {
-          if (!response.isAdmin) {
+          if (!response.data.isAdmin) {
             console.error('Failed to login.');
+            $scope.isAuthenticated = false;
           } else {
             console.log(arguments);
+            $scope.isAuthenticated = true;
           }
-        })
-        .then(null, function (error) {
-          $log.error(error);
-          throw error;
+        }, function() {
+          $scope.isAuthenticated = false;
         });
-    }
+    };
 
-    console.log("koast", koast);
-
-    $scope.isAuthenticated = authorization.isUserAdmin();
+    _koastUser.getStatusPromise().then( function(data) {
+      $scope.isAuthenticated = !!data;
+    });
 
     $rootScope.$on('updateMentorList', function(e){
       getUsers(mentorQuery);
