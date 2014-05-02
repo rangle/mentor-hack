@@ -8,15 +8,16 @@
   },
   "dependencies": {
     "bower": "1.2.8",
-    "underscore": "^1.6.0",
+    "gm": "1.14.x",
+    "gulp-less": "^1.2.3",
     "koast": "^0.1.5",
-    "gulp-less": "^1.2.3"
+    "moment": "2.6.x",
+    "underscore": "^1.6.0"
   },
   "devDependencies": {
     "aws-sdk": "2.0.x",
     "chai": "^1.9.1",
     "event-stream": "^3.1.2",
-    "gm": "1.14.x",
     "gulp": "^3.6.2",
     "gulp-connect": "^2.0.5",
     "gulp-jshint": "^1.5.5",
@@ -36,7 +37,6 @@
     "karma-script-launcher": "^0.1.0",
     "karma-sinon": "^1.0.3",
     "mocha": "^1.18.2",
-    "moment": "2.6.x",
     "sinon": "^1.9.1"
   },
   "scripts": {
