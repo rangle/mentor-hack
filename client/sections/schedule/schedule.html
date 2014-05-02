@@ -12,7 +12,8 @@
       drag="team"
       ng-repeat="team in teams track by $index">
       <div class="panel-body">
-        {{team.displayName}}
+        <div class="glyphicon glyphicon-pencil col-md-2 btn" create-team edit="team"></div>
+        <div class="col-md-10">{{team.displayName}}</div>
       </div>
     </div>
   </div>
