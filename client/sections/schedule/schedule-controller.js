@@ -54,6 +54,8 @@ angular.module('app')
     $scope.mentorFilter = [
       {type: 'developer', label: 'Developer'},
       {type: 'clinician', label: 'Clinical Expert'},
-      {type: 'designer', label: 'Designer'}
+      {type: 'designer', label: 'Designer'},
+      {type: 'healthcare admin', label: 'Health Care Administrator'},
+      {type: 'business', label: 'Business/Legal'}
     ];
   });
