@@ -47,7 +47,6 @@ exports.upload = function (req, resp) {
                     Bucket: process.env.AWS_BUCKET,
                     Key: identifier,
                     Body: data,
-                    ACL: 'public-read',
                     ContentType: file.type
                   };
 
