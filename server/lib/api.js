@@ -6,6 +6,7 @@
 var koast = require('koast');
 var connection = koast.getDatabaseConnectionNow();
 var mapper = koast.makeMongoMapper(connection);
+var imageUpload = require('./image-upload.js');
 
 
 
@@ -24,6 +25,6 @@ exports.routes = [
   ['post', 'users', mapper.post('users')],
   ['post', 'teams', mapper.post('teams')],
   ['del', 'users/:_id', mapper.del('users')],
-  ['del', 'teams/:_id', mapper.del('teams')]
-
+  ['del', 'teams/:_id', mapper.del('teams')],
+	['post', 'img-upload', imageUpload.upload]
 ];

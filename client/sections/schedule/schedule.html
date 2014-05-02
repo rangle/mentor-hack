@@ -2,7 +2,6 @@
   <div id="TeamOptions" class="row">
     <div class="btn btn-success" create-team style="margin: 20px 0 30px 28%">Create Team</div>
   </div>
-
   <!-- List of Teams	-->
   <div class="col-xs-12 col-md-12">
     <div
@@ -20,6 +19,7 @@
 </div>
 
 <div id="RightPanel">
+  <input type="text" class="form-control" ng-model="searchByName"/>
   <!-- Filter -->
   <div id="FilterMenu" class="padding-bottom">
     <div data-ng-class="{'col-xs-9':isAuthenticated,'col-xs-12':!isAuthenticated}">

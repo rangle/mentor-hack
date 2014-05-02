@@ -29,8 +29,9 @@ angular.module('app')
     getUsers(mentorQuery);
     getTeams(teamQuery);
 //    $scope.teams = server.teams;
-
     $scope.predicate = '';
+
+    $scope.isAuthenticated = true;
 
     $scope.isAuthenticated = true;
 
