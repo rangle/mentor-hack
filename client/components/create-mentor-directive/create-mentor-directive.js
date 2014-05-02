@@ -5,10 +5,10 @@ angular.module('app')
 
     return{
       restrict: 'A',
-      $scope:{
+      scope:{
         edit: '='
       },
-      link: function ($scope, element, attrs){
+      link: function (scope, element, attrs){
 
         var showCreateMentorModal = function() {
           $modal.open({
@@ -16,7 +16,7 @@ angular.module('app')
             controller  : 'CreateMentorCtrl',
             resolve: {
               mentor: function(){
-                return $scope.edit;
+                return scope.edit;
               }
             }
           });
