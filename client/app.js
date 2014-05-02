@@ -27,11 +27,8 @@ angular.module('app', [
     .then(function() {
       $rootScope.isAuthenticated = true; //_koastUser.isAuthenticated;
       if (!_koastUser.isAuthenticated) {
-        console.log("Unauthenticated user");
+        $log.debug('Unauthenticated user');
       }
-      console.log('*Users:', server.users);
-      console.log('*Teams:', server.teams);
-
     })
     .then(null, $log.error);
 }]);

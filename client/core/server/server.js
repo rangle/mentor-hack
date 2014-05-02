@@ -15,7 +15,10 @@ angular.module('app.server', [
         .then(function(data) {
           service[endpoint] = data;
         })
-        .then(null, $log.error);
+        .then(null, function(error) {
+          $log.error(error);
+          throw error;
+        });
         promiseArray.push(promise);
       });
 

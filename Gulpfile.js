@@ -32,15 +32,14 @@ var testFiles = [
   'client/bower-components/angular-bootstrap/ui-bootstrap.min.js',
   'client/bower-components/koast/client/src/**/*.js',
   'client/bower-components/angular-dragdrop-ganarajpr/draganddrop.js',
-
-  // app code
+  'client/bower-components/sinon-chai/lib/sinon-chai.js',
+  'client/tests/lib/**/*.js',
+  // app and test code
   'client/app.js',
   'client/components/**/*.js',
   'client/core/**/*.js',
-
-  // test code
-  'client/tests/unit/**.js',
-  'client/tests/unit/**/*.js'
+  'client/sections/**/*.js',
+  'client/*.js'
 ];
 
 gulp.task('test-client', function() {

@@ -1,4 +1,4 @@
-describe("Unit Testing schedule-controller", function () {
+xdescribe("Unit Testing schedule-controller", function () {
 
   beforeEach(angular.mock.module('app'));
 

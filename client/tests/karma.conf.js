@@ -2,7 +2,7 @@ module.exports = function (config) {
 
   console.log(process.cwd());
   config.set({
-    basePath: '',
+    basePath: 'client/',
     frameworks: ['mocha', 'chai', 'sinon'],
     files: [],
     exclude: [],
@@ -11,7 +11,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_ERROR,
     autoWatch: false,
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'], // Alternatively: 'PhantomJS'
     captureTimeout: 6000,
     singleRun: false
   });
