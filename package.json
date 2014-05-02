@@ -7,7 +7,9 @@
     "test": "test"
   },
   "dependencies": {
+    "aws-sdk": "2.0.x",
     "bower": "1.2.8",
+    "event-stream": "^3.1.2",
     "gm": "1.14.x",
     "gulp-less": "^1.2.3",
     "koast": "^0.1.5",
@@ -15,9 +17,7 @@
     "underscore": "^1.6.0"
   },
   "devDependencies": {
-    "aws-sdk": "2.0.x",
     "chai": "^1.9.1",
-    "event-stream": "^3.1.2",
     "gulp": "^3.6.2",
     "gulp-connect": "^2.0.5",
     "gulp-jshint": "^1.5.5",
