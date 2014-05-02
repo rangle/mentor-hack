@@ -32,7 +32,6 @@ angular.module('app')
     $scope.predicate = '';
 
     $scope.isAuthenticated = authorization.isUserAdmin();
-    $scope.userIsEditing = authorization.isUserAdmin();
 
     $rootScope.$on('updateMentorList', function(e){
       getUsers(mentorQuery);

@@ -61,6 +61,9 @@ exports.schemas = [{
   properties: {
     name: String,
     passcode: String,
-    NaCl: String
+    NaCl: String,
+    timeslots: [
+      String
+    ]
   }
 }];

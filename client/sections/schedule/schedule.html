@@ -1,4 +1,4 @@
-<div id="LeftPanel" data-ng-if="isAuthenticated" data-ng-show="userIsEditing">
+<div id="LeftPanel" data-ng-if="isAuthenticated">
     <div id="TeamOptions" class="row">
         <div class="btn btn-success" create-team style="margin: 20px 0 30px 28%">Create Team</div>
     </div>
@@ -23,7 +23,6 @@
 </div>
 
 <div id="RightPanel">
-    <div class="editingHandle" data-ng-click="toggleEditing()"></div>
     <!-- Filter -->
     <div id="FilterMenu" class="padding-bottom">
         <div data-ng-class="{'col-xs-9':isAuthenticated,'col-xs-12':!isAuthenticated}">
