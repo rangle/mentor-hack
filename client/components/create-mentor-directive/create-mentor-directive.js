@@ -123,7 +123,7 @@ angular.module('app')
           url: 'api/img-upload', //upload.php script, node.js route, or servlet url
           // method: POST or PUT,
           // headers: {'headerKey': 'headerValue'}, withCredential: true,
-          data: {myObj: $scope.myModelObj},
+          data: {myObj: $scope.mentor},
           file: $file,
           
           //fileFormDataName: myFile,
@@ -135,12 +135,12 @@ angular.module('app')
           var del = new Image();
           del.onload = function() {
             $scope.$apply(function() {
-              $scope.mentor.photo = data.url;
+              $scope.mentor.photo = data.file.url;
               $scope.uploading = false;
               elem.attr('data-content', 'done');
             });
           }
-          del.src = data.url;
+          del.src = data.file.url;
           
           elem.attr('data-content', 'uploading');
         }).error(errFn)

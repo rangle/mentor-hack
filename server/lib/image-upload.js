@@ -5,10 +5,16 @@ exports.upload = function (req, resp) {
     path = require("path"),
     AWS = require("aws-sdk"),
     koast = require("koast"),
-    imageMagick = gm.subClass({ imageMagick: true });
+    moment = require("moment"),
+    imageMagick = gm.subClass({ imageMagick: true }),
+    makeKey = function (file) {
+      var fileName = file.originalFilename;
+      fileName = moment.utc().format('YYYY-MM-DD-hh-mm-ss-') + fileName;
+      return 'uploadedImages/' + fileName;
+    };
 
-  _.each(req.files, function (val, key) {
-    var tmp_path = val.path,
+  _.each(req.files, function (file, key) {
+    var tmp_path = file.path,
       hashName = [tmp_path.substring(tmp_path.lastIndexOf('/') + 1), '640x470'].join(''),
       target_path = path.resolve(__dirname, '../img/', hashName);
 
@@ -29,22 +35,16 @@ exports.upload = function (req, resp) {
             fs.readFile(target_path, function (err, data) {
               if (err) return console.error(err);
 
-              var awsConfig = koast.getConfig('aws'),
-                  makeKey = function (req) {
-                   var fileName = val.originalFilename;
-                   //fileName = moment.utc().format('YYYY-MM-DD-hh-mm-ss-') + fileName;
-                   return 'uploadedImages/' + fileName;
-                 };
+              var awsConfig = koast.getConfig('aws');
 
               AWS = require('aws-sdk');
               AWS.config.loadFromPath(awsConfig.configFile);
               s3 = new AWS.S3();
 
-              var file = val;
-                  key = makeKey(req);
+              var identifier = makeKey(file);
                   params = {
                     Bucket: awsConfig.bucket,
-                    Key: key,
+                    Key: identifier,
                     Body: data,
                     ACL: 'public-read',
                     ContentType: file.type
@@ -55,7 +55,6 @@ exports.upload = function (req, resp) {
                   throw err;
                 } else {
                   console.log("S3 success!", awsResponse);
-                  console.timeEnd("s3upload");
 
                   // delete the temporary file, so that the explicitly set temporary upload dir does not get filled with unwanted files
                   fs.unlink(tmp_path, function () {
@@ -63,9 +62,9 @@ exports.upload = function (req, resp) {
 
                     fs.unlink(target_path, function () {
                       if (err) throw err;
-                      res.send(200, {
+                      resp.send(200, {
                         file: {
-                          url: 'https://' + awsConfig.bucket + '.s3.amazonaws.com/' + key
+                          url: 'https://' + awsConfig.bucket + '.s3.amazonaws.com/' + identifier
                         }
                       });
                     });
