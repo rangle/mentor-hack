@@ -8,6 +8,10 @@ angular.module('app')
       isMentor: true
     };
 
+    var teamQuery = {
+
+    };
+
     var getUsers = function(query){
       koast.queryForResources('users', query)
         .then(function (users) {
@@ -15,8 +19,17 @@ angular.module('app')
         }, $log.error);
     };
 
+    var getTeams = function(query){
+      koast.queryForResources('teams', query)
+        .then(function(teams){
+          $scope.teams = teams;
+        }, $log.error)
+    };
+
     getUsers(mentorQuery);
-    $scope.teams = server.teams;
+    getTeams(teamQuery);
+//    $scope.teams = server.teams;
+
     $scope.predicate = '';
 
     $scope.isAuthenticated = true;

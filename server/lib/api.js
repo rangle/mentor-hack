@@ -17,7 +17,7 @@ mapper.filter = function (result, req) {
 
 exports.routes = [
   ['get', 'users', mapper.get('users', [], ['isMentor'])],
-  ['get', 'teams', mapper.get('teams', [], ['displayName'])],
+  ['get', 'teams', mapper.get('teams', [], ['displayName', '_id'])],
   ['get', 'teams/:_displayName', mapper.get('teams', [], ['displayName'])],
   ['put', 'users/:_id', mapper.put('users')],
   ['put', 'teams/:_id', mapper.put('teams')],
