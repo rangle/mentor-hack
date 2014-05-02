@@ -21,14 +21,14 @@ exports.upload = function (req, resp) {
     imageMagick(tmp_path).autoOrient().size(function (err, origSize) {
       if (err) return console.error(err);
 
-      var newHeight = (470 * origSize.height) / origSize.width,
-        offsetH = (newHeight / 2) - 235;
+      var newHeight = (640 * origSize.height) / origSize.width,
+        offsetH = (newHeight / 2) - 640;
 
       imageMagick(tmp_path).
         autoOrient().
         resize(640).
         stream(function (err, stdout, stderr) {
-          imageMagick(stdout).gravity("Center").crop(640, 470).write(target_path, function (err) {
+          imageMagick(stdout).gravity("Center").crop(640, 640).write(target_path, function (err) {
             if (err) return console.error(err);
             console.log("resizing done");
 
