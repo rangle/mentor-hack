@@ -38,7 +38,7 @@ exports.upload = function (req, resp) {
               var awsConfig = koast.getConfig('aws');
 
               AWS = require('aws-sdk');
-              AWS.config.loadFromPath(awsConfig.configFile);
+              //AWS.config.loadFromPath(awsConfig.configFile);
               s3 = new AWS.S3();
 
               var identifier = makeKey(file);
