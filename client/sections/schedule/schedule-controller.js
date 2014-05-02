@@ -31,6 +31,8 @@ angular.module('app')
 //    $scope.teams = server.teams;
     $scope.predicate = '';
 
+    console.log("koast", koast);
+
     $scope.isAuthenticated = authorization.isUserAdmin();
 
     $rootScope.$on('updateMentorList', function(e){

@@ -1,5 +1,6 @@
 .idea/
 node_modules/
+!node_modules/koast/
 client/bower-components/
 client/less/*.css
 .env
