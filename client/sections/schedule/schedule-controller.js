@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('ScheduleCtrl', function($scope, server, $rootScope, koast, $log, authorization) {
+  .controller('ScheduleCtrl', function($scope, server, $rootScope, koast, $http, $log, authorization) {
 
 
     var mentorQuery = {
@@ -30,6 +30,22 @@ angular.module('app')
     getTeams(teamQuery);
 //    $scope.teams = server.teams;
     $scope.predicate = '';
+
+    $scope.login = function() {
+      var pass = prompt("Passcode?");
+      $http.post('/auth/login', {username: 'mentorhealth', password: pass})
+        .then(function (response) {
+          if (!response.isAdmin) {
+            console.error('Failed to login.');
+          } else {
+            console.log(arguments);
+          }
+        })
+        .then(null, function (error) {
+          $log.error(error);
+          throw error;
+        });
+    }
 
     console.log("koast", koast);
 

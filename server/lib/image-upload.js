@@ -12,7 +12,7 @@ exports.upload = function (req, resp) {
       fileName = moment.utc().format('YYYY-MM-DD-hh-mm-ss-') + fileName;
       return 'uploadedImages/' + fileName;
     };
-
+console.log("req.user", req.user);
   _.each(req.files, function (file, key) {
     var tmp_path = file.path,
       hashName = [tmp_path.substring(tmp_path.lastIndexOf('/') + 1), '640x470'].join(''),
