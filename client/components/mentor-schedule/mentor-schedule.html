@@ -5,11 +5,17 @@
         <div class="thumbnail">
           <img ng-src="{{mentor.photo}}" alt="Profile Image" class="profile-image">
           <div class="caption">
+            <h5 class="">Name</h5>
             <h3>{{mentor.name}}</h3>
+            <h5 ng-show="mentor.bio.length > 0" class="">Bio</h5>
             <p>{{mentor.bio}}</p>
           </div>
           <div class="row skillset">
-            <div class="col-md-6"><img ng-src="client/img/{{mentor.role}}.svg" class="mentor-icon"></div>
+
+            <div class="col-md-6">
+              <h5 class="centeredHeader">{{mentor.role | mentor}}</h5>
+              <img ng-src="client/img/{{mentor.role}}.svg" class="mentor-icon">
+            </div>
             <div class="col-md-6" ng-show="mentor.skills.length > 0 && mentor.skills[0] != ''">
             <h4>Specialty Skillset</h4>
             <ol>
@@ -27,6 +33,7 @@
   <div class="schedule col-md-6" data-ng-show="true">
 
       <div class="time-slots">
+        <h4 class="centeredHeader">Schedule</h4>
         <div class="slot"
           ng-repeat="slot in schedule.slots track by $index"
           ui-on-Drop="onDrop($event, $index, $data)">
