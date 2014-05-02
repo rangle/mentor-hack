@@ -1,6 +1,6 @@
 <div id="LeftPanel" data-ng-if="isAuthenticated">
     <div id="TeamOptions" class="row">
-        <div class="btn btn-success" create-team style="margin: 20px 0 30px 28%">Create Team</div>
+        <div class="btn btn-success" create-team style="margin: 20px 0 20px 28%">Create Team</div>
     </div>
     <!-- List of Teams  -->
     <div class="col-xs-12 col-md-12">
@@ -25,15 +25,15 @@
 
 <div id="RightPanel">
     <!-- Filter -->
-    <div id="FilterMenu" class="padding-bottom">
+    <div id="FilterMenu" class="padding-bottom padding-top">
         <div data-ng-class="{'col-xs-9':isAuthenticated,'col-xs-12':!isAuthenticated}">
             <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control hidden-xs">
                 <option value="">All</option>
                 <option value="">
-                    <input type="text" class="form-control" placeholder="Or Search For Key Phrases" ng-model="searchByName" />
+                    <input type="text" class="form-control mh-control" placeholder="Or Search For Key Phrases" ng-model="searchByName" />
                 </option>
             </select>
-            <div class="btn-group visible-xs">
+            <div class="btn-group visible-xs  mh-control">
                 <button class="btn btn-default" data-ng-class="{'btn-info': predicate==''}" data-ng-click="resetMentorPredicate(mentor)">All</button>
                 <button data-ng-repeat="mentor in mentorFilter" class="btn btn-default" data-ng-class="{'btn-info': predicate==mentor}" data-ng-bind="mentor.label" data-ng-click="setMentorPredicate(mentor)"></button>
             </div>
@@ -44,8 +44,11 @@
     </div>
 
     <!-- Mentor -->
-  <h4 class="centeredHeader">List of Mentors</h4>
-    <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200" ng-class-odd="">
-
-    </div>
+    <div id="MentorList">
+  	<h4 class="centeredHeader">List of Mentors</h4>
+	<div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200" ng-class-odd="">
+	    <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200 " ng-class-odd="">
+	    </div>
+	</div>
+	</div>
 </div>
