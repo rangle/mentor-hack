@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('ScheduleCtrl', function($scope, server, $rootScope, koast, $log) {
+  .controller('ScheduleCtrl', function($scope, server, $rootScope, koast, $log, authorization) {
 
 
     var mentorQuery = {
@@ -31,9 +31,7 @@ angular.module('app')
 //    $scope.teams = server.teams;
     $scope.predicate = '';
 
-    $scope.isAuthenticated = true;
-
-    $scope.isAuthenticated = true;
+    $scope.isAuthenticated = authorization.isUserAdmin();
 
     $scope.setMentorPredicate = function(predicate) {
       $scope.predicate = predicate;

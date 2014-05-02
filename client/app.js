@@ -8,6 +8,7 @@ angular.module('app', [
   'ngRoute',
   'ui.bootstrap',
   'app.server',
+  'app.authorization',
   'ngDragDrop',
   'angularFileUpload',
   'koast-user',
