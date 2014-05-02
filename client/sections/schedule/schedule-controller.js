@@ -47,6 +47,10 @@ angular.module('app')
       getUsers(mentorQuery);
     });
 
+    $rootScope.$on('updateTeamList', function(e){
+      getTeams(teamQuery);
+    });
+
     $scope.mentorFilter = [
       {type: 'developer', label: 'Developer'},
       {type: 'clinician', label: 'Clinical Expert'},

@@ -31,9 +31,14 @@ angular.module('app')
     }
   })
 
-.controller('teamModalCtrl', function($scope, $modalInstance, team, koast, server){
+.controller('teamModalCtrl', function($scope, $rootScope, $modalInstance, team, koast, server){
 
     $scope.team = {};
+
+    var updateTeamList = function(){
+      $rootScope.$emit('updateTeamList');
+    };
+
 
     if(team){
       $scope.team = team;
@@ -42,6 +47,7 @@ angular.module('app')
 
     $scope.deleteTeam = function(){
       $scope.team.delete();
+      updateTeamList();
       $modalInstance.dismiss();
     };
 
@@ -53,7 +59,8 @@ angular.module('app')
         koast.createResource('teams', $scope.team).then(function () {
           return koast.queryForResources('teams', {displayName: $scope.team.displayName});
         }).then(function(team){
-          server.teams.push(team[0]); //Todo: very hacky, queried instead of get - but gets aren't working
+          updateTeamList();
+//          server.teams.push(team[0]); //Todo: very hacky, queried instead of get - but gets aren't working
           $modalInstance.dismiss();
         })
       }
