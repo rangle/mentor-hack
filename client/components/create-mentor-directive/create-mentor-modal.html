@@ -11,14 +11,19 @@
           <a ng-click="selected.item = item">{{ item }}</a>
         </li>
       </ul>
-
-      <div class="upload-container">
+      
+      <div class="imageUploadContainer" data-image-upload-container="" data-content="Uploading" data-ng-class="{'uploading':uploading}">
+        <input type="file" class="imageUploadHandle" name="file" id="file" data-ng-file-select="onFileSelect($files)" />
+        <img class="uploadedImg" data-ng-src="{{mentor.photo}}"/>
+      </div>
+      
+      <!-- <div class="upload-container">
         <div id="upload-button">
           <span class="fa fa-upload"></span>
           <input ng-file-select="onFileSelect($files)"
                  type="file" name="file" class="file" />
         </div>
-      </div>
+      </div> -->
 
 
       <div class="row">
