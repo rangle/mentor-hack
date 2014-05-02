@@ -39,12 +39,12 @@ exports.upload = function (req, resp) {
 
               AWS = require('aws-sdk');
               //AWS.config.loadFromPath(awsConfig.configFile);
-              AWS.config.update({ "region": "us-east-1" });
+              AWS.config.update({ "region": process.env.AWS_REGION });
               s3 = new AWS.S3();
 
               var identifier = makeKey(file);
                   params = {
-                    Bucket: awsConfig.bucket,
+                    Bucket: process.env.AWS_BUCKET,
                     Key: identifier,
                     Body: data,
                     ACL: 'public-read',
@@ -65,7 +65,7 @@ exports.upload = function (req, resp) {
                       if (err) throw err;
                       resp.send(200, {
                         file: {
-                          url: 'https://' + awsConfig.bucket + '.s3.amazonaws.com/' + identifier
+                          url: 'https://' + process.env.AWS_BUCKET + '.s3.amazonaws.com/' + identifier
                         }
                       });
                     });
@@ -93,7 +93,7 @@ exports.upload = function (req, resp) {
   var awsConfig = koast.getConfig('aws-config');
   var imageUploader = koast.makeS3FileUploader({
     configFile: awsConfig.configFile,
-    bucket: awsConfig.bucket,
+    bucket: process.env.AWS_BUCKET,
     acl: 'public-read',
     makeKey: function (req) {
      var fileName = req.files.attachment.file.originalFilename;
