@@ -133,10 +133,8 @@ angular.module('app')
           //formDataAppender: function(formData, key, val){} 
         }).progress(progressFn).success(function(data, status, headers, config) {
           // file is uploaded successfully
-          $scope.$apply(function() {
-            $scope.mentor.photo = data.file.url;
-            $scope.uploading = false;
-          });
+          $scope.mentor.photo = data.file.url;
+          $scope.uploading = false;
         }).error(errFn)
         //.then(success, error, progress); 
       }
