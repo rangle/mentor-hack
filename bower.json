@@ -23,6 +23,7 @@
     "ng-file-upload-shim": "~1.3.2",
     "koast": "~0.1.6",
     "angular-dragdrop-ganarajpr": "~1.0.1",
-    "font-awesome": "~4.0.3"
+    "font-awesome": "~4.0.3",
+    "ng-Fx": "~0.3.7"
   }
 }
