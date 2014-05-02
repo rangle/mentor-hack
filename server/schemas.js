@@ -39,7 +39,7 @@ exports.schemas = [{
     isAdmin: Boolean,
     role: {
       type: String,
-      enum: ['designer', 'clinician', 'developer', 'healthcare admin', 'business']
+      enum: ['designer', 'clinician', 'developer', 'healthcareAdmin', 'business']
     },
     email: String,
     bio: String,

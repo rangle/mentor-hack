@@ -41,7 +41,7 @@ angular.module('app')
       {type: 'developer', label: 'Developer'},
       {type: 'clinician', label: 'Clinical Expert'},
       {type: 'designer', label: 'Designer'},
-      {type: 'healthcare admin', label: 'Health Care Administrator'},
+      {type: 'healthcareAdmin', label: 'Health Care Administrator'},
       {type: 'business', label: 'Business/Legal'}
     ];
     $scope.mentor = {
