@@ -103,13 +103,13 @@ angular.module('app')
 
     var progressFn = function(evt) {
         var pct = parseInt(100.0 * evt.loaded / evt.total);
-        elem.attr('data-content', ['uploading ... ', pct, '%'].join(''));
+        //elem.attr('data-content', ['uploading ... ', pct, '%'].join(''));
       },
       errFn = function(data, status, headers, config) {
         console.error(data);
         $scope.uploading = false;
 
-        elem.attr('data-content', 'uploading');
+        //elem.attr('data-content', 'uploading');
       };
     
     $scope.uploading = false;
@@ -131,18 +131,10 @@ angular.module('app')
           //formDataAppender: function(formData, key, val){} 
         }).progress(progressFn).success(function(data, status, headers, config) {
           // file is uploaded successfully
-          elem.attr('data-content', 'fetching thumbnail ...');
-          var del = new Image();
-          del.onload = function() {
-            $scope.$apply(function() {
-              $scope.mentor.photo = data.file.url;
-              $scope.uploading = false;
-              elem.attr('data-content', 'done');
-            });
-          }
-          del.src = data.file.url;
-          
-          elem.attr('data-content', 'uploading');
+          $scope.$apply(function() {
+            $scope.mentor.photo = data.file.url;
+            $scope.uploading = false;
+          });
         }).error(errFn)
         //.then(success, error, progress); 
       }
