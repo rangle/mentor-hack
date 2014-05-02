@@ -56,4 +56,11 @@ exports.schemas = [{
   properties: {
     displayName: String
   }
+}, {
+  name: 'events',
+  properties: {
+    name: String,
+    passcode: String,
+    NaCl: String
+  }
 }];

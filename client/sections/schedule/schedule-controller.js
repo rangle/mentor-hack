@@ -32,14 +32,7 @@ angular.module('app')
     $scope.predicate = '';
 
     $scope.isAuthenticated = authorization.isUserAdmin();
-
-    $scope.setMentorPredicate = function(predicate) {
-      $scope.predicate = predicate;
-    };
-
-    $scope.resetMentorPredicate = function(predicate) {
-      $scope.predicate = '';
-    };
+    $scope.userIsEditing = authorization.isUserAdmin();
 
     $rootScope.$on('updateMentorList', function(e){
       getUsers(mentorQuery);

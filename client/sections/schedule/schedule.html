@@ -1,4 +1,4 @@
-<div id="LeftPanel" data-ng-if="isAuthenticated">
+<div id="LeftPanel" data-ng-if="isAuthenticated" data-ng-show="userIsEditing">
     <div id="TeamOptions" class="row">
         <div class="btn btn-success" create-team style="margin: 20px 0 30px 28%">Create Team</div>
     </div>
@@ -23,19 +23,16 @@
 </div>
 
 <div id="RightPanel">
+    <div class="editingHandle" data-ng-click="toggleEditing()"></div>
     <!-- Filter -->
     <div id="FilterMenu" class="padding-bottom">
         <div data-ng-class="{'col-xs-9':isAuthenticated,'col-xs-12':!isAuthenticated}">
-            <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control hidden-xs">
+            <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control">
                 <option value="">All</option>
                 <option value="">
                     <input type="text" class="form-control" placeholder="Or Search For Key Phrases" ng-model="searchByName" />
                 </option>
             </select>
-            <div class="btn-group visible-xs">
-                <button class="btn btn-default" data-ng-class="{'btn-info': predicate==''}" data-ng-click="resetMentorPredicate(mentor)">All</button>
-                <button data-ng-repeat="mentor in mentorFilter" class="btn btn-default" data-ng-class="{'btn-info': predicate==mentor}" data-ng-bind="mentor.label" data-ng-click="setMentorPredicate(mentor)"></button>
-            </div>
         </div>
         <div class="fcol-xs-3" data-ng-if="isAuthenticated">
             <button type="submit" class="btn btn-primary" create-mentor>Create Mentor</button>
