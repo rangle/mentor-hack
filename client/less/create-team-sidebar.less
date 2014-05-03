@@ -1,11 +1,21 @@
-#LeftPanel {
-    .col{
-        overflow-x: hidden;
+.sidebar {
+    position:fixed;
+    border-right: 1px solid #eee;
+    overflow-x:hidden;
+    overflow-y: auto;
+    height: 100%;
+    width:300px;
+    .sidebar-content{
+        overflow: hidden;
+    }
+    .row{
+        overflow: hidden;
     }
     .team-handle {
         color: #fff;
         background-color: #F7AB97;
         border-color: #FE8D70;
+        overflow: hidden;
     }
     .panel-body {
         padding: 5px 15px;

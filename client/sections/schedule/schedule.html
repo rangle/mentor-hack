@@ -1,56 +1,83 @@
-<div id="LeftPanel" data-ng-if="isAuthenticated" class="container">
-    <div id="TeamOptions" class="row text-center">
-        <div class="btn btn-success" create-team style="margin: 20px 30px; display: block;">Create Team</div>
-    </div>
-    <!-- List of Teams  -->
-    <div class="col-xs-12 col-md-12">
-      <h5 class="centeredHeader">Teams</h5>
-        <div class="panel panel-default teamBlocks fx-fade-down fx-speed-1200" ng-class="{true: 'team-handle', false: 'break-handle' }[['Lunch', 'Dinner'].indexOf(team.displayName) == -1]" ui-draggable="true" drag="team" ng-repeat="team in teams track by $index">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col col-xs-1 circle-container">
-                        <span class="circle"></span>
-                        <span class="circle"></span>
-                        <span class="circle"></span>
+<div id="LeftPanel" data-ng-if="isAuthenticated" class="sidebar">
+    <div class="sidebar-content">
+        <div id="TeamOptions" class="row text-center">
+            <div class="btn btn-success" create-team style="margin: 20px 30px; display: block;">Create Team</div>
+        </div>
+        <!-- List of Teams  -->
+        <div class="col-xs-12 col-md-12">
+            <h5 class="centeredHeader">Teams</h5>
+            <div class="panel panel-default teamBlocks fx-fade-down fx-speed-1200" ng-class="{true: 'team-handle', false: 'break-handle' }[['Lunch', 'Dinner'].indexOf(team.displayName) == -1]" ui-draggable="true" drag="team" ng-repeat="team in teams track by $index">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col col-xs-1 circle-container">
+                            <span class="circle"></span>
+                            <span class="circle"></span>
+                            <span class="circle"></span>
+                        </div>
+                        <div class="col col-xs-9">
+                            <span>{{team.displayName}}</span>
+                        </div>
+                        <div class="col col-xs-2">
+                            <span class="glyphicon glyphicon glyphicon-edit btn" create-team edit="team"></span>
+                        </div>
                     </div>
-                    <div class="col col-xs-9"><span>{{team.displayName}}</span></div>
-                    <div class="col col-xs-2">
-                        <span class="glyphicon glyphicon glyphicon-edit btn" create-team edit="team"></span>
+                </div>
+            </div>
+            <footer>
+                <p>Built for HHKids by</p>
+                <a href="http://rangle.io">
+                    <img src="client/img/rangleio/rangle.io-logo-horizontal.svg" class="rangleio">
+                </a>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<div id="RightPanel" class="content">
+    <div class="row">
+        <div class="col-sm-8">
+            <!-- Filter -->
+            <div id="FilterMenu" class="padding-bottom padding-top">
+                <div data-ng-class="{'col-xs-12':isAuthenticated,'col-xs-12':!isAuthenticated}">
+                    <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control hidden-xs">
+                        <option value="">All</option>
+                        <option value="">
+                            <input type="text" class="form-control mh-control" placeholder="Or Search For Key Phrases" ng-model="searchByName" />
+                        </option>
+                    </select>
+                    <div class="btn-group visible-xs  mh-control">
+                        <button class="btn btn-default" data-ng-class="{'btn-info': predicate==''}" data-ng-click="resetMentorPredicate(mentor)">All</button>
+                        <button data-ng-repeat="mentor in mentorFilter" class="btn btn-default" data-ng-class="{'btn-info': predicate==mentor}" data-ng-bind="mentor.label" data-ng-click="setMentorPredicate(mentor)"></button>
                     </div>
                 </div>
             </div>
         </div>
-            <footer>
-        <p>Built for HHKids by</p>
-        <a href="http://rangle.io"><img src="client/img/rangleio/rangle.io-logo-horizontal.svg" class="rangleio"></a>
-      </footer>
-    </div>
-</div>
-
-<div id="RightPanel">
-    <!-- Filter -->
-    <div id="FilterMenu" class="padding-bottom padding-top">
-        <div data-ng-class="{'col-xs-9':isAuthenticated,'col-xs-12':!isAuthenticated}">
-            <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control hidden-xs">
-                <option value="">All</option>
-                <option value="">
-                    <input type="text" class="form-control mh-control" placeholder="Or Search For Key Phrases" ng-model="searchByName" />
-                </option>
-            </select>
-            <div class="btn-group visible-xs  mh-control">
-                <button class="btn btn-default" data-ng-class="{'btn-info': predicate==''}" data-ng-click="resetMentorPredicate(mentor)">All</button>
-                <button data-ng-repeat="mentor in mentorFilter" class="btn btn-default" data-ng-class="{'btn-info': predicate==mentor}" data-ng-bind="mentor.label" data-ng-click="setMentorPredicate(mentor)"></button>
-            </div>
-        </div>
-        <div class="fcol-xs-3" data-ng-if="isAuthenticated">
+        <div class="col-sm-3" data-ng-if="isAuthenticated">
             <button type="submit" class="btn btn-primary" create-mentor>Create Mentor</button>
         </div>
     </div>
 
     <!-- Mentor -->
     <div id="MentorList">
+<<<<<<< HEAD
   	<h4 class="centeredHeader">List of Mentors</h4>
 	<div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200" ng-class-odd=""></div>
 	</div>
 	</div>
+=======
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="centeredHeader">List of Mentors</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200" ng-class-odd="">
+                    <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200 " ng-class-odd="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+>>>>>>> layout fix in progress
 </div>
