@@ -62,8 +62,8 @@
         <div class="row">
             <div class="col">
                 <h4 class="centeredHeader">List of Mentors</h4>
-              <div class="col-md-12" style="padding-left:45%" ng-if="!isAuthenticated"><img class="publicImg" src="client/img/rangleio/rangle.io-logo-horizontal.svg" alt=""/></div>
-                <p class="rangle-link centeredHeader" style="color:#999;">Built for HHKids by <a href="http://www.rangle.io">rangle.<span style="color:red;">io</span></a>
+              <!--<div class="col-md-12" style="padding-left:45%" ng-if="!isAuthenticated"><img class="publicImg" src="client/img/rangleio/rangle.io-logo-horizontal.svg" alt=""/></div>-->
+                <p class="rangle-link centeredHeader" ng-show="!isAuthenticated" style="color:#999;">Built for HHKids by <a href="http://www.rangle.io">rangle.<span style="color:red;">io</span></a>
                 </p>
             </div>
         </div>
