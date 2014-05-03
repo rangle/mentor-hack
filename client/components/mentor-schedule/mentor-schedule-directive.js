@@ -27,8 +27,10 @@ angular.module('app.components.mentor-schedule-directive', [
       scope.taken = function (team) {
         if (!team.team._id) {
           return;
-        } else if (['Lunch', 'Dinner'].indexOf(team) >= 0) {
+        } else if (['Lunch', 'Dinner', 'Not Available'].indexOf(team.team.displayName) >= 0) {
           return 'break';
+        }else if (['Available', 'Free'].indexOf(team.team.displayName) >= 0) {
+          return 'free';
         } else {
           return 'taken';
         }
