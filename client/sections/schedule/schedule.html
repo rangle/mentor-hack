@@ -5,7 +5,7 @@
     <!-- List of Teams  -->
     <div class="col-xs-12 col-md-12">
       <h5 class="centeredHeader">Teams</h5>
-        <div class="panel panel-default fx-fade-down fx-speed-1200" ng-class="{true: 'team-handle', false: 'break-handle' }[['Lunch', 'Dinner'].indexOf(team.displayName) == -1]" ui-draggable="true" drag="team" ng-repeat="team in teams track by $index">
+        <div class="panel panel-default teamBlocks fx-fade-down fx-speed-1200" ng-class="{true: 'team-handle', false: 'break-handle' }[['Lunch', 'Dinner'].indexOf(team.displayName) == -1]" ui-draggable="true" drag="team" ng-repeat="team in teams track by $index">
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-1 circle-container">
