@@ -1,5 +1,5 @@
 <div class="mentor">
-  <div class="col-lg-6">
+  <div class="col-lg-6 mentorInfo">
 
       <section class="profile">
         <div class="thumbnail">
@@ -30,7 +30,7 @@
           </div>
       </section>
   </div>
-  <div class="schedule col-lg-6" data-ng-show="true">
+  <div class="schedule col-lg-6" data-ng-show="mentor.ui.scheduleShown">
 
       <div class="time-slots">
         <h4 class="centeredHeader">Schedule</h4>
@@ -40,7 +40,7 @@
           <div class="time">{{ slot.label | date: 'shortTime'}}</div><div class="team" ng-class="taken(slot)">{{ slot.team.displayName }}</div>
         </div>
       </div>
-      <div class="row">
+      <div class="col-md-12">
         <button type="button" class="btn visible-xs visible-sm" role="button" data-ng-class="{'btn-success': mentor.ui.scheduleShown}" data-ng-click="toggleScheduleShown()">Schedule</button>
       </div>
   </div>

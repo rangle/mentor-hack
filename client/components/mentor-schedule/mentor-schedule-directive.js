@@ -17,12 +17,20 @@ angular.module('app.components.mentor-schedule-directive', [
       scope: {
         'mentor': '=mentorSchedule',
         'teams': '=teams'
-      },
+      }
     };
 
     directive.link = function (scope, element, attrs) {
 
       scope.schedule = schedule.getScheduleForMentor(scope.mentor);
+
+      scope.mentor.ui = {
+        "scheduleShown": false
+      };
+
+      scope.toggleScheduleShown = function () {
+        scope.mentor.ui.scheduleShown = !scope.mentor.ui.scheduleShown;
+      };
 
       scope.taken = function (team) {
         if (!team.team._id) {
