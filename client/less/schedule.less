@@ -1,22 +1,57 @@
-.mh-control{
-  margin-top: 1rem;
+.navbar-fixed-top {
+    left: 15px;
+    border-width: 0 0 1px;
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    @media screen and (max-width: 767px) {
+        position: relative;
+    }
 }
-
-.padding-top{
-  padding-top: 20px;
+.mh-control {
+    margin-top: 1rem;
 }
-.padding-bottom{
-  padding-bottom: 20px;
+.padding-top {
+    padding-top: 20px;
 }
-
-#FilterMenu{
-  position: fixed;
-  background: white;
-  width: 100%;
-  z-index: 999;
-  border-bottom: 1px solid #ddd;
+.padding-bottom {
+    padding-bottom: 20px;
 }
-
-#MentorList{
-  margin-top: 12rem;
+.filter-menu {
+    background: white;
+    z-index: 999;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    &:first-child {
+        position:fixed;
+    }
+}
+.MentorList {
+    margin-top: 12rem;
+    overflow-x: hidden;
+}
+.content {
+    // margin-left: 300px;
+    .col-sm-12 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .rangle-link {
+        margin-top: 2rem;
+        font-size: 1rem;
+        a {
+            color:#000;
+        }
+    }
+}
+@media screen and (max-width: @screen-xs-max) {
+    .container {
+        padding-left:0;
+    }
+    .time {
+        font-size: 1rem;
+    }
+    .MentorList {
+        margin-top: 3rem;
+    }
 }

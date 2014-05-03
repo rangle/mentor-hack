@@ -30,15 +30,9 @@ div{
 	margin-bottom: 20px !important;
 }
 
-.schedule{
-  height: 585px;
-}
-
 .time-slots {
   overflow: scroll;
-
-
-
+  margin-bottom: 2rem;
   .flex-display();
   .flex-direction(column);
 
@@ -46,21 +40,27 @@ div{
     .flex-display();
     .flex-direction(row);
     .flex-grow(1);
+    height: 5rem;
 
-    height: 35px;
     .time{
-      width: 20%;
+      width: 30%;
+      background-color: #ddd;
+      border-bottom: 1px solid #fff;
       .flex-display();
       .justify-content(center);
       .align-items(center);
     }
+    .time:nth-child(even){
+		background-color: #ddd;
+      }
     .team{
-      width: 80%;
+      width: 70%;
       .flex-display();
       .justify-content(center);
       .align-items(center);
       font-weight: bolder;
       color: #fff;
+      border-bottom: 1px solid #ddd;
       &.taken {
         background-color: #F7AB97;
       }
@@ -76,7 +76,7 @@ div{
 }
 
 .container{
-  padding-left: 300px;
+  // padding-left: 300px;
   transition: all 0.4s ease 0s;
   margin: 0;
   @media (min-width: 1200px){
@@ -99,21 +99,21 @@ div{
   }
 }
 
-#LeftPanel{
-	margin-left: -300px;
-	left: 300px;
-	width: 300px;
-	border-right: 1px solid #ddd;
-	padding: 0 2rem;
-	position: fixed;
-	height: 100%;
-	overflow-y: auto;
-	z-index: 1000;
-	transition: all 0.4s ease 0s;
-}
-#RightPanel{
-width: 100%;
-}
+// #LeftPanel{
+// 	margin-left: -300px;
+// 	left: 300px;
+// 	width: 300px;
+// 	border-right: 1px solid #ddd;
+// 	padding: 0 2rem;
+// 	position: fixed;
+// 	height: 100%;
+// 	overflow-y: auto;
+// 	z-index: 1000;
+// 	transition: all 0.4s ease 0s;
+// }
+// #RightPanel{
+// width: 100%;
+// }
 
 .centeredHeader{
   text-align: center;
