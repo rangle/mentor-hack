@@ -32,6 +32,7 @@ angular.module('app')
     $scope.predicate = '';
 
     $rootScope.isAuthenticated = authorization.isUserAdmin();
+    $scope.isAuthenticated = $rootScope.isAuthenticated;
 
     $scope.setMentorPredicate = function(predicate) {
       $scope.predicate = predicate;
