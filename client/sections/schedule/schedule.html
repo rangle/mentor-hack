@@ -50,9 +50,7 @@
     <!-- Mentor -->
     <div id="MentorList">
   	<h4 class="centeredHeader">List of Mentors</h4>
-	<div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200" ng-class-odd="">
-	    <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200 " ng-class-odd="">
-	    </div>
+	<div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200" ng-class-odd=""></div>
 	</div>
 	</div>
 </div>

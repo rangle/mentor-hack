@@ -8,8 +8,8 @@ angular.module('app.components.mentor-schedule-directive', [
   'app.components.mentor-schedule'
 ])
 
-.directive('mentorSchedule', ['schedule', '$log',
-  function (schedule, $log) {
+.directive('mentorSchedule', ['schedule', '$log', '$rootScope',
+  function (schedule, $log, $rootScope) {
     'use strict';
     var directive = {
       restrict: 'A',
@@ -43,6 +43,11 @@ angular.module('app.components.mentor-schedule-directive', [
             .then(null, $log.error);
         }
       };
+
+      scope.isAuthenticated = function() {
+        console.log("$rootScope.isAuthenticated", $rootScope.isAuthenticated);
+        return $rootScope.isAuthenticated;
+      }
     };
 
     return directive;
