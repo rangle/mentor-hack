@@ -1,4 +1,4 @@
-<div id="LeftPanel" data-ng-if="isAuthenticated" class="sidebar">
+<div id="LeftPanel" data-ng-if="isAuthenticated" class="sidebar col-sm-3">
     <div class="sidebar-content">
         <div id="TeamOptions" class="row text-center">
             <div class="btn btn-success" create-team style="margin: 20px 30px; display: block;">Create Team</div>
@@ -34,26 +34,26 @@
 </div>
 
 <div id="RightPanel" class="content">
-    <div class="row">
-        <div class="col-sm-8">
+    <div class="navbar navbar-fixed-top col-sm-9 col-sm-offset-3">
+        <div class="col-sm-12">
             <!-- Filter -->
-            <div id="FilterMenu" class="padding-bottom padding-top">
-                <div data-ng-class="{'col-xs-12':isAuthenticated,'col-xs-12':!isAuthenticated}">
-                    <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control hidden-xs">
-                        <option value="">All</option>
-                        <option value="">
-                            <input type="text" class="form-control mh-control" placeholder="Or Search For Key Phrases" ng-model="searchByName" />
-                        </option>
-                    </select>
-                    <div class="btn-group visible-xs  mh-control">
-                        <button class="btn btn-default" data-ng-class="{'btn-info': predicate==''}" data-ng-click="resetMentorPredicate(mentor)">All</button>
-                        <button data-ng-repeat="mentor in mentorFilter" class="btn btn-default" data-ng-class="{'btn-info': predicate==mentor}" data-ng-bind="mentor.label" data-ng-click="setMentorPredicate(mentor)"></button>
-                    </div>
+            <!-- <div id="FilterMenu" class="padding-bottom padding-top"> -->
+            <div data-ng-class="{'col-sm-8':isAuthenticated,'col-sm-12':!isAuthenticated}">
+                <select ng-model="predicate" ng-options="mentor.label for mentor in mentorFilter" class="form-control hidden-xs">
+                    <option value="">All</option>
+                    <option value="">
+                        <input type="text" class="form-control mh-control" placeholder="Or Search For Key Phrases" ng-model="searchByName" />
+                    </option>
+                </select>
+                <div class="btn-group visible-xs  mh-control">
+                    <button class="btn btn-default" data-ng-class="{'btn-info': predicate==''}" data-ng-click="resetMentorPredicate(mentor)">All</button>
+                    <button data-ng-repeat="mentor in mentorFilter" class="btn btn-default" data-ng-class="{'btn-info': predicate==mentor}" data-ng-bind="mentor.label" data-ng-click="setMentorPredicate(mentor)"></button>
                 </div>
+
             </div>
-        </div>
-        <div class="col-sm-3" data-ng-if="isAuthenticated">
-            <button type="submit" class="btn btn-primary" create-mentor>Create Mentor</button>
+            <div class="col-sm-4" data-ng-if="isAuthenticated">
+                <button type="submit" class="btn btn-primary" create-mentor>Create Mentor</button>
+            </div>
         </div>
     </div>
 
