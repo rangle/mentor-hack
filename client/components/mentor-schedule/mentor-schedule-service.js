@@ -12,7 +12,9 @@ angular.module('app.components.mentor-schedule', [
   function(server) {
     'use strict';
     var service = {};
-    var numSlots = 9;
+    var numSlots = 36; //hours x 4
+    var incr = 0.25;
+    var startTime = 10; //24 hour based
 
     function getHourLabel(hour, startTime) {
       hour += startTime;
@@ -22,6 +24,33 @@ angular.module('app.components.mentor-schedule', [
         return '12pm';
       } else {
         return (hour - 12) + 'pm'
+      }
+    }
+
+
+    function getHourWithIncr(slotPosition){
+
+      var hours;
+      var minutes;
+      var time;
+
+      if(slotPosition === 0){
+        hours = Math.floor(startTime);
+        minutes = 60 * (startTime - hours);
+        time = new Date();
+        time.setHours(hours);
+        time.setMinutes(minutes);
+        return time;
+      }else{
+        startTime += incr;
+
+        hours = Math.floor(startTime);
+        minutes = 60 * (startTime - hours);
+        time = new Date();
+        time.setHours(hours);
+        time.setMinutes(minutes);
+
+        return time;
       }
     }
 
@@ -53,9 +82,10 @@ angular.module('app.components.mentor-schedule', [
           slot.team = {
             isLunch: i === 2 //This is noon
           }
-        };
+        }
 
-        slot.label = getHourLabel(i, 10); // Start at 10am for now.
+        slot.label = getHourWithIncr(i);
+        //slot.label = getHourLabel(i, 10); // Start at 10am for now.
         schedule.slots.push(slot);
       }
 
