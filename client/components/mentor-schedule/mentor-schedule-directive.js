@@ -25,7 +25,7 @@ angular.module('app.components.mentor-schedule-directive', [
       scope.schedule = schedule.getScheduleForMentor(scope.mentor);
 
       scope.mentor.ui = {
-        "scheduleShown": false
+        "scheduleShown": true
       };
 
       scope.toggleScheduleShown = function () {
