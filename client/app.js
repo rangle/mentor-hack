@@ -13,7 +13,8 @@ angular.module('app', [
   'angularFileUpload',
   'koast-user',
   'fx.animations',
-  'ngAnimate'
+  'ngAnimate',
+  'ngTouch'
 ])
 .config(function($routeProvider) {
   $routeProvider
