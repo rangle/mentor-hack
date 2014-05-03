@@ -1,6 +1,6 @@
-<div id="LeftPanel" data-ng-if="isAuthenticated">
-    <div id="TeamOptions" class="row">
-        <div class="btn btn-success" create-team style="margin: 20px 0 20px 28%">Create Team</div>
+<div id="LeftPanel" data-ng-if="isAuthenticated" class="container">
+    <div id="TeamOptions" class="row text-center">
+        <div class="btn btn-success" create-team style="margin: 20px 30px; display: block;">Create Team</div>
     </div>
     <!-- List of Teams  -->
     <div class="col-xs-12 col-md-12">
@@ -8,18 +8,22 @@
         <div class="panel panel-default teamBlocks fx-fade-down fx-speed-1200" ng-class="{true: 'team-handle', false: 'break-handle' }[['Lunch', 'Dinner'].indexOf(team.displayName) == -1]" ui-draggable="true" drag="team" ng-repeat="team in teams track by $index">
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-xs-1 circle-container">
+                    <div class="col col-xs-1 circle-container">
                         <span class="circle"></span>
                         <span class="circle"></span>
                         <span class="circle"></span>
                     </div>
-                    <div class="col-xs-9"><span>{{team.displayName}}</span></div>
-                    <div class="col-xs-2">
+                    <div class="col col-xs-9"><span>{{team.displayName}}</span></div>
+                    <div class="col col-xs-2">
                         <span class="glyphicon glyphicon glyphicon-edit btn" create-team edit="team"></span>
                     </div>
                 </div>
             </div>
         </div>
+            <footer>
+        <p>Built for HHKids by</p>
+        <a href="http://rangle.io"><img src="client/img/rangleio/rangle.io-logo-horizontal.svg" class="rangleio"></a>
+      </footer>
     </div>
 </div>
 
