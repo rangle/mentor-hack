@@ -30,6 +30,10 @@ div{
 	margin-bottom: 20px !important;
 }
 
+.schedule{
+  height: 585px;
+}
+
 .time-slots {
   overflow: scroll;
   margin-bottom: 2rem;
@@ -99,21 +103,27 @@ div{
   }
 }
 
-// #LeftPanel{
-// 	margin-left: -300px;
-// 	left: 300px;
-// 	width: 300px;
-// 	border-right: 1px solid #ddd;
-// 	padding: 0 2rem;
-// 	position: fixed;
-// 	height: 100%;
-// 	overflow-y: auto;
-// 	z-index: 1000;
-// 	transition: all 0.4s ease 0s;
-// }
-// #RightPanel{
-// width: 100%;
-// }
+@media(max-width: @screen-phone) {
+  .container{
+    padding:0;
+  }
+  .navbar-fixed-top{
+    left: 0;
+  }
+
+  .mentor{
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+    .schedule{
+      padding: 0;
+    }
+    .mentorInfo{
+      padding: 0;
+    }
+  }
+}
 
 .centeredHeader{
   text-align: center;
