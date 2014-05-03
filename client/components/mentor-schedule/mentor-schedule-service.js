@@ -89,6 +89,9 @@ angular.module('app.components.mentor-schedule', [
         schedule.slots.push(slot);
       }
 
+      incr = 0.25;
+      startTime = 10;
+
       // Add a function to book a team. Returns a promise.
       schedule.book = function(slot, team) {
         slot.team = team;

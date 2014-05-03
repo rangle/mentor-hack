@@ -6,6 +6,7 @@
 @import "create-team-sidebar.less";
 @import "team-modal";
 @import "schedule.less";
+@import "flexboxLibrary";
 
 div{
   overflow: auto;
@@ -29,42 +30,46 @@ div{
 	margin-bottom: 20px !important;
 }
 
-.time-slots {
-	.list-group;
+.schedule{
   height: 585px;
+}
 
-	.slot {
-      height: 36px;
+.time-slots {
+  overflow: scroll;
 
-      .list-group-item;
-//		line-height: 2.5;
-		border-radius: 0px !important;
-		padding: 0;
 
-		.time { 
-			display: inline-block;
-			background-color: #F2F2F2; 
-//			padding: 10px 15px;
-			width: 25%;
-			text-align: center;
-          height:30px;
-		}
-		.team {
-			width: 75%;
-			text-align: center;
-			display: inline-block;
-//			padding: 10px 15px;
-			color: #fff;
-			font-weight: bolder;
-          height: 30px;
-			&.taken {
-				background-color: #F7AB97;
-			}
-			&.break {
-				background-color: #8DBAF7;
-			}
-		}
-	}
+
+  .flex-display();
+  .flex-direction(column);
+
+  .slot{
+    .flex-display();
+    .flex-direction(row);
+    .flex-grow(1);
+
+    height: 35px;
+    .time{
+      width: 20%;
+      .flex-display();
+      .justify-content(center);
+      .align-items(center);
+    }
+    .team{
+      width: 80%;
+      .flex-display();
+      .justify-content(center);
+      .align-items(center);
+      font-weight: bolder;
+      color: #fff;
+      &.taken {
+        background-color: #F7AB97;
+      }
+      &.break {
+        background-color: #8DBAF7;
+      }
+    }
+  }
+
 }
 
 .container{

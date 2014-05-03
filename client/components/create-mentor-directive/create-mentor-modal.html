@@ -1,6 +1,6 @@
 <div class="create-mentor-modal">
 
-  <form>
+  <form ng-submit="saveMentor()">
     <div class="modal-header">
       <h3>Create a new mentor</h3>
     </div>
@@ -59,8 +59,8 @@
     </div>
 
     <div class="modal-footer">
-      <button ng-if="deleteAvailable" class="btn btn-danger" type="submit" ng-click="deleteMentor()">Delete</button>
-      <button class="btn btn-primary" type="submit" ng-click="saveMentor()">OK</button>
+      <button ng-if="deleteAvailable" class="btn btn-danger" ng-click="deleteMentor()">Delete</button>
+      <button class="btn btn-primary" ng-click="saveMentor()">OK</button>
       <button class="btn btn-info" ng-click="cancel()">Cancel</button>
     </div>
   </form>
