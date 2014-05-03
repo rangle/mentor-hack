@@ -4,7 +4,9 @@
     overflow-x:hidden;
     overflow-y: auto;
     height: 100%;
-    // width:300px;
+    @media screen and (max-width: @screen-xs-max) {
+        display:none;
+    }
     .sidebar-content{
         overflow: hidden;
     }

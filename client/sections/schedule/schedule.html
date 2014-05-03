@@ -58,6 +58,7 @@
     </div>
 
     <!-- Mentor -->
+<<<<<<< HEAD
     <div id="MentorList">
 <<<<<<< HEAD
   	<h4 class="centeredHeader">List of Mentors</h4>
@@ -65,13 +66,17 @@
 	</div>
 	</div>
 =======
+=======
+    <div class="MentorList col-sm-9 col-sm-offset-3">
+>>>>>>> Many layout fixes. Looks better on mobile
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col">
                 <h4 class="centeredHeader">List of Mentors</h4>
+                <p class="rangle-link centeredHeader">Built for HHKids by <a href="http://www.rangle.io">rangle.<span style="color:red;">io</span></p>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-lg-12">
                 <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200" ng-class-odd="">
                     <div ng-repeat="mentor in mentors | filter:predicate.type | orderBy:'name' | filter:searchByName" teams="teams" mentor-schedule="mentor" class="fx-fade-down fx-speed-1200 " ng-class-odd="">
                     </div>
