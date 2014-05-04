@@ -5,6 +5,6 @@
     "db": "mentor-hack",
     "schemas": "./server/schemas.js",
     "user": "healthhack",
-    "pass": "abdellarocks"
+    "pass": "PASSWORD_HERE"
   }
 ]
